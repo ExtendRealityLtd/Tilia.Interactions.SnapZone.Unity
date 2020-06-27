@@ -2,8 +2,8 @@
 {
     using Malimbe.PropertySerializationAttribute;
     using Malimbe.XmlDocumentationAttribute;
-    using Tilia.Interactions.Interactables;
-    using Tilia.Interactions.Interactables.Grab;
+    using Tilia.Interactions.Interactables.Interactables;
+    using Tilia.Interactions.Interactables.Interactables.Grab;
     using UnityEngine;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Collection.List;

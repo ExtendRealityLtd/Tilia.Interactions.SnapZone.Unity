@@ -4,7 +4,7 @@
     using Malimbe.XmlDocumentationAttribute;
     using System;
     using System.Collections.Generic;
-    using Tilia.Interactions.Interactables;
+    using Tilia.Interactions.Interactables.Interactables;
     using UnityEngine;
     using UnityEngine.Events;
     using Zinnia.Data.Attribute;
