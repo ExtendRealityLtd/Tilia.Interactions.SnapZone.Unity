@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.25](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.0.24...v1.0.25) (2020-06-27)
+
+#### Bug Fixes
+
+* **Interactables:** update Interactables namespace to latest ([cd3e0b6](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/cd3e0b69be3a3d512c47cf394fa7c268dab16740))
+  > The Interactables namespace changed in version 1.9.0 of the Interactables package, so it has been updated accordingly.
+
 ### [1.0.24](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.0.23...v1.0.24) (2020-06-21)
 
 #### Miscellaneous Chores
