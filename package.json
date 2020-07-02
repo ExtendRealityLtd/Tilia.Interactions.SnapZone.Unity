@@ -2,7 +2,7 @@
     "name": "io.extendreality.tilia.interactions.snapzone.unity",
     "displayName": "Tilia Interactions SnapZone Unity",
     "description": "A spatial zone in which an interactable object can be snapped into the designated area for the Unity software.",
-    "version": "1.0.25",
+    "version": "1.0.26",
     "unity": "2018.3",
     "unityRelease": "10f1",
     "keywords": [

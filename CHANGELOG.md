@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.26](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.0.25...v1.0.26) (2020-07-02)
+
+#### Bug Fixes
+
+* **Prefabs:** specify correct component for snap rule ([ecd610b](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/ecd610b4070407d8886f692484dc859bccd5028b))
+  > The InteractableFacade component had been deleted from the snap rule due to the change in namespace and Unity did not automatically update the component to the new script namespace. This has now been fixed.
+
 ### [1.0.25](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.0.24...v1.0.25) (2020-06-27)
 
 #### Bug Fixes
