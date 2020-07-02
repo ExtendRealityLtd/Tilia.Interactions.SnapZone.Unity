@@ -88,8 +88,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Zinnia.Data.Operation.Extraction.GameObjectExtractor+UnityEvent, Zinnia.Runtime,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: Zinnia.Data.Operation.Extraction.TransformDataGameObjectExtractor+UnityEvent,
+      Zinnia.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  Failed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   source:
     transform: {fileID: 0}
     useLocalValues: 0
@@ -411,6 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -519,8 +525,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Zinnia.Data.Operation.Extraction.GameObjectExtractor+UnityEvent, Zinnia.Runtime,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: Zinnia.Data.Operation.Extraction.ComponentGameObjectExtractor+UnityEvent,
+      Zinnia.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  Failed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   source: {fileID: 0}
 --- !u!1 &8407923664314433649
 GameObject:
@@ -565,6 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -685,6 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -760,6 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -843,6 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -1006,13 +1021,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Tilia.Interactions.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   Ungrabbed:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Tilia.Interactions.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!1 &8407923664495705375
@@ -1058,6 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -1233,6 +1249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -1476,8 +1493,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Zinnia.Data.Operation.Extraction.GameObjectExtractor+UnityEvent, Zinnia.Runtime,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: Zinnia.Data.Operation.Extraction.ComponentGameObjectExtractor+UnityEvent,
+      Zinnia.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  Failed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   source: {fileID: 0}
 --- !u!114 &8407923664688261256
 MonoBehaviour:
@@ -1551,6 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -1714,6 +1737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -1939,8 +1963,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Zinnia.Data.Operation.Extraction.GameObjectExtractor+UnityEvent, Zinnia.Runtime,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: Zinnia.Tracking.Collision.Active.Operation.Extraction.NotifierTargetExtractor+UnityEvent,
+      Zinnia.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  Failed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  source:
+    forwardSource: {fileID: 0}
+    isTrigger: 0
+    colliderData: {fileID: 0}
 --- !u!1 &8407923664929508104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,6 +2017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -2058,6 +2092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -2234,13 +2269,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Tilia.Interactions.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   Ungrabbed:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Tilia.Interactions.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &8407923664961743653
@@ -2269,8 +2304,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Zinnia.Data.Operation.Extraction.GameObjectExtractor+UnityEvent, Zinnia.Runtime,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: Zinnia.Data.Operation.Extraction.ComponentGameObjectExtractor+UnityEvent,
+      Zinnia.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  Failed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   source: {fileID: 0}
 --- !u!1 &8407923664967594663
 GameObject:
@@ -2347,6 +2387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -2454,8 +2495,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Zinnia.Data.Operation.Extraction.GameObjectExtractor+UnityEvent, Zinnia.Runtime,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: Zinnia.Data.Operation.Extraction.ComponentGameObjectExtractor+UnityEvent,
+      Zinnia.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  Failed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   source: {fileID: 0}
 --- !u!1 &8407923665100801833
 GameObject:
@@ -2617,6 +2663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -2678,6 +2725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -2940,6 +2988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -3012,6 +3061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -3269,6 +3319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -3379,7 +3430,7 @@ MonoBehaviour:
   Grabbed:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Tilia.Interactions.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   Ungrabbed:
@@ -3407,7 +3458,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Tilia.Interactions.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &8407923665421349811
@@ -3436,8 +3487,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Zinnia.Data.Operation.Extraction.GameObjectExtractor+UnityEvent, Zinnia.Runtime,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: Zinnia.Data.Operation.Extraction.ComponentGameObjectExtractor+UnityEvent,
+      Zinnia.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  Failed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   source: {fileID: 0}
 --- !u!1 &8407923665430485245
 GameObject:
@@ -3482,6 +3538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -3611,8 +3668,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Zinnia.Data.Operation.Extraction.GameObjectExtractor+UnityEvent, Zinnia.Runtime,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: Zinnia.Tracking.Collision.Active.Operation.Extraction.NotifierTargetExtractor+UnityEvent,
+      Zinnia.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  Failed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  source:
+    forwardSource: {fileID: 0}
+    isTrigger: 0
+    colliderData: {fileID: 0}
 --- !u!1 &8407923665507313185
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,6 +3722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -3735,6 +3802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -4084,6 +4152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -4171,6 +4240,7 @@ MonoBehaviour:
     zState: 1
   applyTransformations: -1
   transitionDuration: 0
+  shouldApplyToEqualProperties: 0
   transitionDestinationThreshold: 0.01
   isTransitionDestinationDynamic: 1
   BeforeTransformUpdated:
@@ -4286,13 +4356,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Tilia.Interactions.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   Ungrabbed:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Tilia.Interactions.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Grab.InteractableGrabStateRegistrar+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!1 &8407923665908840703
@@ -4353,9 +4423,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Tilia.Interactions.Interactables.InteractableFacadeExtractor+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Operation.Extraction.InteractableFacadeExtractor+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Failed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  source: {fileID: 0}
+  searchAlsoOn: -1
 --- !u!114 &8407923665908840701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4368,6 +4445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ae85fc95510224291abaade783b420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -4415,7 +4493,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Tilia.Interactions.Interactables.InteractableFacadeEventProxyEmitter+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Event.Proxy.InteractableFacadeEventProxyEmitter+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   receiveValidity:
@@ -4463,6 +4541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -4642,7 +4721,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Tilia.Interactions.Interactables.Grab.InteractableGrabStateEmitter+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Grab.InteractableGrabStateEmitter+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   NotGrabbed:
@@ -4659,7 +4738,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Tilia.Interactions.Interactables.Grab.InteractableGrabStateEmitter+UnityEvent,
+    m_TypeName: Tilia.Interactions.Interactables.Interactables.Grab.InteractableGrabStateEmitter+UnityEvent,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!1 &8407923665992164507
@@ -4766,6 +4845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -4861,6 +4941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -5042,6 +5123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b0262053634c7419fe6bb7a304c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payload: {fileID: 0}
   Emitted:
     m_PersistentCalls:
       m_Calls:
@@ -5191,7 +5273,7 @@ MonoBehaviour:
       Zinnia.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   currentIndex: 0
   elements:
-  - assemblyQualifiedTypeName: Tilia.Interactions.Interactables.InteractableFacade,
+  - assemblyQualifiedTypeName: Tilia.Interactions.Interactables.Interactables.InteractableFacade,
       Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!1 &8407923666110382461
