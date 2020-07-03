@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.0.26...v1.1.0) (2020-07-03)
+
+#### Features
+
+* **API:** add auto-generated API documentation ([9f3e460](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/9f3e460a82bbc2e2a5668a1cd119143d52c52349))
+  > The API documentation is auto generated with docfx and converted to markdown via turndown in a custom nodejs script.
+
+#### Bug Fixes
+
+* **package.json:** add docfx.json file ([40d307f](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/40d307fd27fba352be9b495ce8159ad8ea44379f))
+  > The docfx.json file was missing from the package.json causing the build process to fail. It has now been added.
+
 ### [1.0.26](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.0.25...v1.0.26) (2020-07-02)
 
 #### Bug Fixes
