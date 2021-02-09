@@ -88,6 +88,12 @@
         [Serialized]
         [field: DocumentedByXml, Restricted]
         public GameObjectEventProxyEmitter ForceUnsnapInteractableProcess { get; protected set; }
+        /// <summary>
+        /// The <see cref="GameObject"/> that determines the snap destination location.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml, Restricted]
+        public GameObject DestinationLocation { get; protected set; }
         #endregion
 
         /// <summary>
@@ -98,6 +104,11 @@
         /// Returns the currently snapped <see cref="GameObject"/>.
         /// </summary>
         public GameObject SnappedInteractable => SnappedInteractablesList.NonSubscribableElements.Count > 0 ? SnappedInteractablesList.NonSubscribableElements[0] : null;
+
+        /// <summary>
+        /// An offset to apply upon snap if the snapped <see cref="GameObject"/> is in the same position as the <see cref="DestinationLocation"/> to ensure the follower works correctly.
+        /// </summary>
+        private const float InitialOffset = 0.05f;
 
         /// <summary>
         /// Attempts to snap a given <see cref="GameObject"/> to the snap zone.
@@ -122,6 +133,11 @@
 
                 activatingZone.Facade.Unsnap();
                 break;
+            }
+
+            if (objectToSnap.transform.position.ApproxEquals(DestinationLocation.transform.position))
+            {
+                objectToSnap.transform.position += Vector3.forward * InitialOffset;
             }
 
             SnapDroppedInteractableProcess.Receive(objectToSnap);

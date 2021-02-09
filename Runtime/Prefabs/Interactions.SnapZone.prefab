@@ -5335,6 +5335,7 @@ MonoBehaviour:
   snappedInteractablesList: {fileID: 8407923665559923119}
   snapDroppedInteractableProcess: {fileID: 8407923664943525174}
   forceUnsnapInteractableProcess: {fileID: 8407923664429067986}
+  destinationLocation: {fileID: 8407923664650951421}
 --- !u!1 &8407923666129015629
 GameObject:
   m_ObjectHideFlags: 0
