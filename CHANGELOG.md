@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.47](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.1.46...v1.1.47) (2021-02-11)
+
+#### Bug Fixes
+
+* **prefabs:** apply slight position offset on force snap ([2159830](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/215983071979454e8c9eed0b02750ed54916409a))
+  > There's an issue where if the GameObject being snapped and the SnapZone are in the same location then a force snap is called then the internal Object Follower won't think the position has changed initially so will not perform the follow. This fix just applies a slight position offset to the object being snapped just before it is force snapped so this discrepancy is not an issue.
+
 ### [1.1.46](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.1.45...v1.1.46) (2021-02-04)
 
 #### Miscellaneous Chores
