@@ -11,6 +11,7 @@ Sets up the Interactions SnapZone Prefab based on the provided user settings.
   * [ActivationArea]
   * [ActivationValidator]
   * [CollidingObjectsList]
+  * [DestinationLocation]
   * [Facade]
   * [ForceUnsnapInteractableProcess]
   * [GrabStateEmitter]
@@ -83,6 +84,16 @@ The GameObjectObservableList containing the list of objects that are currently c
 
 ```
 public GameObjectObservableList CollidingObjectsList { get; protected set; }
+```
+
+#### DestinationLocation
+
+The GameObject that determines the snap destination location.
+
+##### Declaration
+
+```
+public GameObject DestinationLocation { get; protected set; }
 ```
 
 #### Facade
@@ -368,6 +379,7 @@ public virtual void Unsnap()
 [ActivationArea]: #ActivationArea
 [ActivationValidator]: #ActivationValidator
 [CollidingObjectsList]: #CollidingObjectsList
+[DestinationLocation]: #DestinationLocation
 [Facade]: #Facade
 [ForceUnsnapInteractableProcess]: #ForceUnsnapInteractableProcess
 [GrabStateEmitter]: #GrabStateEmitter
