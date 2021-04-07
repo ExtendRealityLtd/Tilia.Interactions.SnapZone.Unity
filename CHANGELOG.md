@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.2.3](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.2.2...v1.2.3) (2021-04-07)
+
+#### Bug Fixes
+
+* **SnapZoneConfigurator:** apply snap validity rule to Snap method ([8805213](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/88052137011d0a65f8438f9ec8e5a7015a8f2293))
+  > The Snap Validity rule on the facade was not being applied to when the `Snap` method was being called, meaning things could still be snapped when they should have been denied by a rule.
+  > 
+  > This fixes it by wrapping the Snap code with the rule check.
+
 ### [1.2.2](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.2.1...v1.2.2) (2021-04-07)
 
 #### Miscellaneous Chores
