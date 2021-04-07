@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.1.60...v1.2.0) (2021-04-07)
+
+#### Features
+
+* **Utility:** add prefab creator ([4382498](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/438249806ae4b5a2782c39b005871b7bd01f8a46))
+  > The latest version of Zinnia has the basis of a prefab creator that can be used to enable easy adding of prefabs to a scene without needing to drag and drop from directories. Instead a new menu item is added for quickly adding prefabs. The guide has been updated to accommodate this and the FodyWeavers.xml is now located in the root to serve both the Runtime and Editor scripts.
+
+#### Bug Fixes
+
+* **package.json:** add missing reference to Editor directory ([2467bbe](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/2467bbe4291d9bd680c417fa3c686d22984da35e))
+  > The build will fail without referencing this new Editor directory so it has now been added to the package.
+
 ### [1.1.60](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.1.59...v1.1.60) (2021-04-01)
 
 #### Miscellaneous Chores
