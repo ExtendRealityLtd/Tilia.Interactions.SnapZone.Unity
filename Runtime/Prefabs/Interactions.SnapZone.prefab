@@ -920,6 +920,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098fc6c54c3792e49837be0f531aa588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Obtained:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Zinnia.Rule.Collection.RuleContainerObservableList+UnityEvent, Zinnia.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   Found:
     m_PersistentCalls:
       m_Calls: []
@@ -1135,6 +1140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7102cedb00f74625a1cdaa822e5661f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Obtained:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Zinnia.Data.Collection.List.GameObjectObservableList+UnityEvent, Zinnia.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   Found:
     m_PersistentCalls:
       m_Calls: []
@@ -1841,6 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b20687ab7424fdb9831faad0eef53ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  processCollisionsWhenDisabled: 1
   emittedTypes: -1
   statesToProcess: -1
   forwardingSourceValidity:
@@ -2546,6 +2557,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45641bb26f54b8d4797b08b74c29645c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Obtained:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Zinnia.Data.Collection.List.BehaviourObservableList+UnityEvent, Zinnia.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   Found:
     m_PersistentCalls:
       m_Calls: []
@@ -3157,6 +3173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7102cedb00f74625a1cdaa822e5661f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Obtained:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Zinnia.Data.Collection.List.GameObjectObservableList+UnityEvent, Zinnia.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   Found:
     m_PersistentCalls:
       m_Calls: []
@@ -3990,6 +4011,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7102cedb00f74625a1cdaa822e5661f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Obtained:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Zinnia.Data.Collection.List.GameObjectObservableList+UnityEvent, Zinnia.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   Found:
     m_PersistentCalls:
       m_Calls: []
@@ -5231,6 +5257,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d01a890104495a49a7a72c5733174ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Obtained:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Zinnia.Data.Collection.List.SerializableTypeComponentObservableList+UnityEvent,
+      Zinnia.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   Found:
     m_PersistentCalls:
       m_Calls: []
@@ -5326,6 +5357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facade: {fileID: 8407923665924606686}
   validCollisionRules: {fileID: 8407923664469734249}
+  allValidRules: {fileID: 8407923666129015626}
   grabStateEmitter: {fileID: 8407923665937188163}
   activationArea: {fileID: 8407923664845045255}
   activationValidator: {fileID: 8407923664688261256}

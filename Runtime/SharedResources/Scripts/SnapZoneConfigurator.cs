@@ -10,6 +10,7 @@
     using Zinnia.Data.Type;
     using Zinnia.Event.Proxy;
     using Zinnia.Extension;
+    using Zinnia.Rule;
     using Zinnia.Rule.Collection;
     using Zinnia.Tracking.Modification;
 
@@ -34,6 +35,12 @@
         [Serialized]
         [field: Header("Reference Settings"), DocumentedByXml]
         public RuleContainerObservableList ValidCollisionRules { get; protected set; }
+        /// <summary>
+        /// The <see cref="AllRule"/> that takes the <see cref="ValidCollisionRules"/>.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public AllRule AllValidRules { get; protected set; }
         /// <summary>
         /// The <see cref="InteractableGrabStateEmitter"/> that processes if the interactable entering the zone is being grabbed.
         /// </summary>
@@ -116,6 +123,11 @@
         /// <param name="objectToSnap">The object to attempt to snap.</param>
         public virtual void Snap(GameObject objectToSnap)
         {
+            if (!AllValidRules.Accepts(objectToSnap))
+            {
+                return;
+            }
+
             InteractableFacade snappableInteractable = objectToSnap.TryGetComponent<InteractableFacade>(true, true);
             if (snappableInteractable == null || SnappedInteractable != null)
             {
