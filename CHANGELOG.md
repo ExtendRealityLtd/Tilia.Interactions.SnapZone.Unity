@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.2.3...v1.3.0) (2021-04-21)
+
+#### Features
+
+* **SnapZoneManager:** add component to manage scene snap zones ([8c0e7b2](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/8c0e7b241086b18526e044d0070e798c468ef06e))
+  > The SnapZoneManager component provides an easy way to manage scene snap zones. This first release only has a couple of useful methods, one to determine if a given Interactable is in a SnapZone (and optionally return the snap zone it is in), and to unsnap an Interactable from a SnapZone when only the Interactable is known.
+
 ### [1.2.3](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.2.2...v1.2.3) (2021-04-07)
 
 #### Bug Fixes
