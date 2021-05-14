@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.3.8](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.3.7...v1.3.8) (2021-05-14)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.interactions.interactables.unity ([8cece43](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/8cece43b0d703c550ff837261c1e423047169738))
+  > Bumps [io.extendreality.tilia.interactions.interactables.unity](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity) from 1.18.0 to 1.19.0. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/compare/v1.18.0...v1.19.0)
+  > 
+  > Signed-off-by: dependabot[bot] <support@github.com>
+* **README.md:** update title logo to related-media repo ([bbf228d](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/bbf228d7f0f8a23fa440f8494422704725f3ceb3))
+  > The title logo is now located on the related-media repo.
+
 ### [1.3.7](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.3.6...v1.3.7) (2021-05-10)
 
 #### Miscellaneous Chores
