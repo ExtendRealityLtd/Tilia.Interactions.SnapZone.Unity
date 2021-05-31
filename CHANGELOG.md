@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.3.8...v1.4.0) (2021-05-31)
+
+#### Features
+
+* **Facade:** add ability to snap a default interactable on zone enable ([e28ca10](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/e28ca1016793a4a7c1cbd3a52dec019263dcfac2))
+  > The new InitialSnappedInteractable property allows for an Interactable to be specified that will be snapped to the zone (if the rules permit it) when the snap zone is enabled.
+
 ### [1.3.8](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.3.7...v1.3.8) (2021-05-14)
 
 #### Miscellaneous Chores
