@@ -16,6 +16,7 @@ The public interface into the Interactions SnapZone Prefab.
   * [Unsnapped]
 * [Properties]
   * [Configuration]
+  * [InitialSnappedInteractable]
   * [SnappableGameObjects]
   * [SnappedGameObject]
   * [SnapValidity]
@@ -117,6 +118,16 @@ The linked Configurator Setup.
 
 ```
 public SnapZoneConfigurator Configuration { get; protected set; }
+```
+
+#### InitialSnappedInteractable
+
+An optional InteractableFacade to snap into the snap zone when the snap zone is enabled.
+
+##### Declaration
+
+```
+public InteractableFacade InitialSnappedInteractable { get; set; }
 ```
 
 #### SnappableGameObjects
@@ -251,6 +262,7 @@ public virtual void Unsnap()
 [Unsnapped]: #Unsnapped
 [Properties]: #Properties
 [Configuration]: #Configuration
+[InitialSnappedInteractable]: #InitialSnappedInteractable
 [SnappableGameObjects]: #SnappableGameObjects
 [SnappedGameObject]: #SnappedGameObject
 [SnapValidity]: #SnapValidity

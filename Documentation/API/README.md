@@ -26,6 +26,10 @@ The public interface into the Interactions SnapZone Prefab.
 
 Defines the event with the GameObject.
 
+#### [SnapZoneManager]
+
+A helper class for managing scene snap zones.
+
 ### Structs
 
 #### [ActivationValidator.ListenerKey]
@@ -44,5 +48,6 @@ The state the SnapZone is in.
 [SnapZoneConfigurator]: SnapZoneConfigurator.md
 [SnapZoneFacade]: SnapZoneFacade.md
 [SnapZoneFacade.UnityEvent]: SnapZoneFacade.UnityEvent.md
+[SnapZoneManager]: SnapZoneManager.md
 [ActivationValidator.ListenerKey]: ActivationValidator.ListenerKey.md
 [SnapZoneFacade.SnapZoneState]: SnapZoneFacade.SnapZoneState.md

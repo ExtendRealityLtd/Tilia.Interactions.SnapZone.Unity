@@ -7,14 +7,19 @@ Sets up the Interactions SnapZone Prefab based on the provided user settings.
 * [Inheritance]
 * [Namespace]
 * [Syntax]
+* [Fields]
+  * [EndOfFrameInstruction]
+  * [SnapDefaultInteractableRoutine]
 * [Properties]
   * [ActivationArea]
   * [ActivationValidator]
+  * [AllValidRules]
   * [CollidingObjectsList]
   * [DestinationLocation]
   * [Facade]
   * [ForceUnsnapInteractableProcess]
   * [GrabStateEmitter]
+  * [InitialTransitionDuration]
   * [PropertyApplier]
   * [SnapDroppedInteractableProcess]
   * [SnappableInteractables]
@@ -35,6 +40,7 @@ Sets up the Interactions SnapZone Prefab based on the provided user settings.
   * [OnEnable()]
   * [ProcessOtherSnappablesOnSnap()]
   * [Snap(GameObject)]
+  * [SnapInitialAtEndOfFrame()]
   * [Unsnap()]
 
 ## Details
@@ -52,6 +58,28 @@ Sets up the Interactions SnapZone Prefab based on the provided user settings.
 
 ```
 public class SnapZoneConfigurator : MonoBehaviour
+```
+
+### Fields
+
+#### EndOfFrameInstruction
+
+An instruction for yielding at the end of the current frame.
+
+##### Declaration
+
+```
+protected YieldInstruction EndOfFrameInstruction
+```
+
+#### SnapDefaultInteractableRoutine
+
+The Coroutine for managing the default initial snap.
+
+##### Declaration
+
+```
+protected Coroutine SnapDefaultInteractableRoutine
 ```
 
 ### Properties
@@ -74,6 +102,16 @@ The [ActivationValidator] that determines if the activation of the zone is valid
 
 ```
 public ActivationValidator ActivationValidator { get; protected set; }
+```
+
+#### AllValidRules
+
+The AllRule that takes the [ValidCollisionRules].
+
+##### Declaration
+
+```
+public AllRule AllValidRules { get; protected set; }
 ```
 
 #### CollidingObjectsList
@@ -124,6 +162,16 @@ The InteractableGrabStateEmitter that processes if the interactable entering the
 
 ```
 public InteractableGrabStateEmitter GrabStateEmitter { get; protected set; }
+```
+
+#### InitialTransitionDuration
+
+The initial duration to transition the default Interactable to the SnapZone.
+
+##### Declaration
+
+```
+public float InitialTransitionDuration { get; set; }
 ```
 
 #### PropertyApplier
@@ -356,6 +404,22 @@ public virtual void Snap(GameObject objectToSnap)
 | --- | --- | --- |
 | GameObject | objectToSnap | The object to attempt to snap. |
 
+#### SnapInitialAtEndOfFrame()
+
+Snaps the Facade.SnapInitialAtEndOfFrame to the snap zone at the end of the frame.
+
+##### Declaration
+
+```
+protected virtual IEnumerator SnapInitialAtEndOfFrame()
+```
+
+##### Returns
+
+| Type | Description |
+| --- | --- |
+| System.Collections.IEnumerator | An Enumerator to manage the running of the Coroutine. |
+
 #### Unsnap()
 
 Attempts to unsnap any existing InteractableFacade that is currently snapped to the snap zone.
@@ -371,18 +435,24 @@ public virtual void Unsnap()
 [SnapZoneActivator]: SnapZoneActivator.md
 [ActivationValidator]: SnapZoneConfigurator.md#ActivationValidator
 [ActivationValidator]: ActivationValidator.md
+[ValidCollisionRules]: SnapZoneConfigurator.md#ValidCollisionRules
 [SnapZoneFacade]: SnapZoneFacade.md
 [Inheritance]: #Inheritance
 [Namespace]: #Namespace
 [Syntax]: #Syntax
+[Fields]: #Fields
+[EndOfFrameInstruction]: #EndOfFrameInstruction
+[SnapDefaultInteractableRoutine]: #SnapDefaultInteractableRoutine
 [Properties]: #Properties
 [ActivationArea]: #ActivationArea
 [ActivationValidator]: #ActivationValidator
+[AllValidRules]: #AllValidRules
 [CollidingObjectsList]: #CollidingObjectsList
 [DestinationLocation]: #DestinationLocation
 [Facade]: #Facade
 [ForceUnsnapInteractableProcess]: #ForceUnsnapInteractableProcess
 [GrabStateEmitter]: #GrabStateEmitter
+[InitialTransitionDuration]: #InitialTransitionDuration
 [PropertyApplier]: #PropertyApplier
 [SnapDroppedInteractableProcess]: #SnapDroppedInteractableProcess
 [SnappableInteractables]: #SnappableInteractables
@@ -403,4 +473,5 @@ public virtual void Unsnap()
 [OnEnable()]: #OnEnable
 [ProcessOtherSnappablesOnSnap()]: #ProcessOtherSnappablesOnSnap
 [Snap(GameObject)]: #SnapGameObject
+[SnapInitialAtEndOfFrame()]: #SnapInitialAtEndOfFrame
 [Unsnap()]: #Unsnap
