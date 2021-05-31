@@ -55,6 +55,12 @@
         [Serialized]
         [field: DocumentedByXml]
         public float TransitionDuration { get; set; }
+        /// <summary>
+        /// An optional <see cref="InteractableFacade"/> to snap into the snap zone when the snap zone is enabled.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public InteractableFacade InitialSnappedInteractable { get; set; }
         #endregion
 
         #region Reference Settings

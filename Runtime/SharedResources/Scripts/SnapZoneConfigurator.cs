@@ -2,6 +2,7 @@
 {
     using Malimbe.PropertySerializationAttribute;
     using Malimbe.XmlDocumentationAttribute;
+    using System.Collections;
     using Tilia.Interactions.Interactables.Interactables;
     using Tilia.Interactions.Interactables.Interactables.Grab;
     using UnityEngine;
@@ -101,6 +102,12 @@
         [Serialized]
         [field: DocumentedByXml, Restricted]
         public GameObject DestinationLocation { get; protected set; }
+        /// <summary>
+        /// The initial duration to transition the default Interactable to the SnapZone.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public float InitialTransitionDuration { get; set; }
         #endregion
 
         /// <summary>
@@ -111,6 +118,15 @@
         /// Returns the currently snapped <see cref="GameObject"/>.
         /// </summary>
         public GameObject SnappedInteractable => SnappedInteractablesList.NonSubscribableElements.Count > 0 ? SnappedInteractablesList.NonSubscribableElements[0] : null;
+
+        /// <summary>
+        /// An instruction for yielding at the end of the current frame.
+        /// </summary>
+        protected YieldInstruction EndOfFrameInstruction = new WaitForEndOfFrame();
+        /// <summary>
+        /// The <see cref="Coroutine"/> for managing the default initial snap.
+        /// </summary>
+        protected Coroutine SnapDefaultInteractableRoutine;
 
         /// <summary>
         /// An offset to apply upon snap if the snapped <see cref="GameObject"/> is in the same position as the <see cref="DestinationLocation"/> to ensure the follower works correctly.
@@ -313,6 +329,8 @@
         {
             ConfigureValidityRules();
             ConfigurePropertyApplier();
+            SnapDefaultInteractableRoutine = StartCoroutine(SnapInitialAtEndOfFrame());
+
             if (SnappedInteractable != null)
             {
                 SnappedInteractable.gameObject.SetActive(true);
@@ -325,6 +343,29 @@
             {
                 SnappedInteractable.gameObject.SetActive(false);
             }
+
+            if (SnapDefaultInteractableRoutine != null)
+            {
+                StopCoroutine(SnapDefaultInteractableRoutine);
+            }
+        }
+
+        /// <summary>
+        /// Snaps the <see cref="Facade.SnapInitialAtEndOfFrame"/> to the snap zone at the end of the frame.
+        /// </summary>
+        /// <returns>An Enumerator to manage the running of the Coroutine.</returns>
+        protected virtual IEnumerator SnapInitialAtEndOfFrame()
+        {
+            yield return EndOfFrameInstruction;
+            if (SnappedInteractable == null && Facade.InitialSnappedInteractable != null)
+            {
+                float cachedDuration = Facade.TransitionDuration;
+                Facade.TransitionDuration = InitialTransitionDuration;
+                Facade.Snap(Facade.InitialSnappedInteractable);
+                yield return new WaitForSeconds(InitialTransitionDuration);
+                Facade.TransitionDuration = cachedDuration;
+            }
+            SnapDefaultInteractableRoutine = null;
         }
     }
 }
