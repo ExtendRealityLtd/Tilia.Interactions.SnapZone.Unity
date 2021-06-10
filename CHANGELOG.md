@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.4.3](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.4.2...v1.4.3) (2021-06-10)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.zinnia.unity from 1.36.0 to 1.36.1 ([e07bbc5](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/e07bbc53d59621f4cb8ae60ee81bbc03d983d0fd))
+  > Bumps [io.extendreality.zinnia.unity](https://github.com/ExtendRealityLtd/Zinnia.Unity) from 1.36.0 to 1.36.1. - [Release notes](https://github.com/ExtendRealityLtd/Zinnia.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Zinnia.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Zinnia.Unity/compare/v1.36.0...v1.36.1)
+
 ### [1.4.2](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.4.1...v1.4.2) (2021-06-10)
 
 #### Miscellaneous Chores
