@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.4.5...v1.5.0) (2021-06-16)
+
+#### Features
+
+* **Prefab:** split out prepare rigidbody functionality ([8cdbf6a](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/8cdbf6a408e7f38da8dfae5d5c1024ca15a2e2d0))
+  > The PrepareInteractableRigidbody functionality has been split out into separate steps to make it easier to determine the functionality at run time by simply turning off these GameObjects with the logic in.
+
 ### [1.4.5](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.4.4...v1.4.5) (2021-06-10)
 
 #### Miscellaneous Chores
