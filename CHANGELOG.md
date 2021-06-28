@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.5.9](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.5.8...v1.5.9) (2021-06-28)
+
+#### Bug Fixes
+
+* **prefab:** ensure highlighting state is checked on collision events ([7115ca9](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/7115ca9ea03d06434aeaad88a823b0b4d1058085))
+  > The highlighting state was sometimes not set correctly if a collision event occurred but the droppable objects collection was not being mutated.
+  > 
+  > This fix uses the droppable objects collection and checks to see if it is empty or still populated and applies the correct highlighting logic upon that check.
+
 ### [1.5.8](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.5.7...v1.5.8) (2021-06-24)
 
 #### Miscellaneous Chores
