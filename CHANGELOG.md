@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.5.40...v1.6.0) (2022-03-02)
+
+#### Features
+
+* **package.json:** add information urls to package ([5b99313](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/5b993131ea8488ff1938b2e1f5eddddb1a998e23))
+  > The changelog, documentation and license url has been added to the package.json as these are used within the Unity package manager.
+
 ### [1.5.40](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.5.39...v1.5.40) (2022-02-14)
 
 #### Miscellaneous Chores
