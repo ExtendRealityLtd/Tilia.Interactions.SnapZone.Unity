@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.6.2](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.6.1...v1.6.2) (2022-03-02)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.mutators.objectfollower.unity ([67f88eb](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/67f88ebcfba39ad299bcdd7b577a40f9a02c5710))
+  > Bumps [io.extendreality.tilia.mutators.objectfollower.unity](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity) from 1.2.15 to 1.3.0. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/compare/v1.2.15...v1.3.0)
+* **deps:** bump io.extendreality.tilia.utilities.shaders.unity ([b0cb657](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/b0cb657c20beac6a4cd8d8ae20bf3e29407bc930))
+  > Bumps [io.extendreality.tilia.utilities.shaders.unity](https://github.com/ExtendRealityLtd/Tilia.Utilities.Shaders.Unity) from 1.2.0 to 1.3.0. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Utilities.Shaders.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Utilities.Shaders.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Utilities.Shaders.Unity/compare/v1.2.0...v1.3.0)
+
 ### [1.6.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.6.0...v1.6.1) (2022-03-02)
 
 #### Miscellaneous Chores
