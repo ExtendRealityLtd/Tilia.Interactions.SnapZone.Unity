@@ -61,6 +61,12 @@
         [Serialized]
         [field: DocumentedByXml]
         public InteractableFacade InitialSnappedInteractable { get; set; }
+        /// <summary>
+        /// Whether to auto snap a thrown <see cref="GameObject"/> into this snap zone even if the <see cref="GameObject"/> is not being held as it enters the collision area.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public bool AutoSnapThrownObjects { get; set; }
         #endregion
 
         #region Reference Settings
@@ -175,6 +181,15 @@
         protected virtual void OnAfterTransitionDurationChange()
         {
             Configuration.ConfigurePropertyApplier();
+        }
+
+        /// <summary>
+        /// Called after <see cref="AutoSnapThrownObjects"/> has been changed.
+        /// </summary>
+        [CalledAfterChangeOf(nameof(AutoSnapThrownObjects))]
+        protected virtual void OnAfterAutoSnapThrownObjectsChange()
+        {
+            Configuration.ConfigureAutoSnap();
         }
     }
 }
