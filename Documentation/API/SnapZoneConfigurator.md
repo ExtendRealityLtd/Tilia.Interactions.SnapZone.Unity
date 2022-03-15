@@ -14,6 +14,7 @@ Sets up the Interactions SnapZone Prefab based on the provided user settings.
   * [ActivationArea]
   * [ActivationValidator]
   * [AllValidRules]
+  * [AutoSnapLogicContainer]
   * [CollidingObjectsList]
   * [DestinationLocation]
   * [Facade]
@@ -28,6 +29,7 @@ Sets up the Interactions SnapZone Prefab based on the provided user settings.
   * [ValidCollisionRules]
   * [ValidSnappableInteractablesList]
 * [Methods]
+  * [ConfigureAutoSnap()]
   * [ConfigurePropertyApplier()]
   * [ConfigureValidityRules()]
   * [EmitActivated(GameObject)]
@@ -112,6 +114,16 @@ The AllRule that takes the [ValidCollisionRules].
 
 ```
 public AllRule AllValidRules { get; protected set; }
+```
+
+#### AutoSnapLogicContainer
+
+The GameObject that contains the auto snap logic.
+
+##### Declaration
+
+```
+public GameObject AutoSnapLogicContainer { get; protected set; }
 ```
 
 #### CollidingObjectsList
@@ -245,6 +257,16 @@ public GameObjectObservableList ValidSnappableInteractablesList { get; protected
 ```
 
 ### Methods
+
+#### ConfigureAutoSnap()
+
+Configures the auto snap logic.
+
+##### Declaration
+
+```
+public virtual void ConfigureAutoSnap()
+```
 
 #### ConfigurePropertyApplier()
 
@@ -447,6 +469,7 @@ public virtual void Unsnap()
 [ActivationArea]: #ActivationArea
 [ActivationValidator]: #ActivationValidator
 [AllValidRules]: #AllValidRules
+[AutoSnapLogicContainer]: #AutoSnapLogicContainer
 [CollidingObjectsList]: #CollidingObjectsList
 [DestinationLocation]: #DestinationLocation
 [Facade]: #Facade
@@ -461,6 +484,7 @@ public virtual void Unsnap()
 [ValidCollisionRules]: #ValidCollisionRules
 [ValidSnappableInteractablesList]: #ValidSnappableInteractablesList
 [Methods]: #Methods
+[ConfigureAutoSnap()]: #ConfigureAutoSnap
 [ConfigurePropertyApplier()]: #ConfigurePropertyApplier
 [ConfigureValidityRules()]: #ConfigureValidityRules
 [EmitActivated(GameObject)]: #EmitActivatedGameObject

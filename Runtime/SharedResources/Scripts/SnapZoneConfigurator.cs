@@ -103,6 +103,12 @@
         [field: DocumentedByXml, Restricted]
         public GameObject DestinationLocation { get; protected set; }
         /// <summary>
+        /// The <see cref="GameObject"/> that contains the auto snap logic.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml, Restricted]
+        public GameObject AutoSnapLogicContainer { get; protected set; }
+        /// <summary>
         /// The initial duration to transition the default Interactable to the SnapZone.
         /// </summary>
         [Serialized]
@@ -292,6 +298,14 @@
         }
 
         /// <summary>
+        /// Configures the auto snap logic.
+        /// </summary>
+        public virtual void ConfigureAutoSnap()
+        {
+            AutoSnapLogicContainer.SetActive(Facade.AutoSnapThrownObjects);
+        }
+
+        /// <summary>
         /// Attempts to process any other valid snappable objects against any other potential SnapZones if their primary activating zone is snapped by another object.
         /// </summary>
         public virtual void ProcessOtherSnappablesOnSnap()
@@ -329,6 +343,7 @@
         {
             ConfigureValidityRules();
             ConfigurePropertyApplier();
+            ConfigureAutoSnap();
             SnapDefaultInteractableRoutine = StartCoroutine(SnapInitialAtEndOfFrame());
 
             if (SnappedInteractable != null)

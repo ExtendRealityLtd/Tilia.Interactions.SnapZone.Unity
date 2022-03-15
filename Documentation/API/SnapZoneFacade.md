@@ -15,6 +15,7 @@ The public interface into the Interactions SnapZone Prefab.
   * [Snapped]
   * [Unsnapped]
 * [Properties]
+  * [AutoSnapThrownObjects]
   * [Configuration]
   * [InitialSnappedInteractable]
   * [SnappableGameObjects]
@@ -23,6 +24,7 @@ The public interface into the Interactions SnapZone Prefab.
   * [TransitionDuration]
   * [ZoneState]
 * [Methods]
+  * [OnAfterAutoSnapThrownObjectsChange()]
   * [OnAfterSnapValidityChange()]
   * [OnAfterTransitionDurationChange()]
   * [Snap(GameObject)]
@@ -110,6 +112,16 @@ public SnapZoneFacade.UnityEvent Unsnapped
 
 ### Properties
 
+#### AutoSnapThrownObjects
+
+Whether to auto snap a thrown GameObject into this snap zone even if the GameObject is not being held as it enters the collision area.
+
+##### Declaration
+
+```
+public bool AutoSnapThrownObjects { get; set; }
+```
+
 #### Configuration
 
 The linked Configurator Setup.
@@ -182,6 +194,16 @@ public SnapZoneFacade.SnapZoneState ZoneState { get; }
 
 ### Methods
 
+#### OnAfterAutoSnapThrownObjectsChange()
+
+Called after [AutoSnapThrownObjects] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterAutoSnapThrownObjectsChange()
+```
+
 #### OnAfterSnapValidityChange()
 
 Called after [SnapValidity] has been changed.
@@ -248,6 +270,7 @@ public virtual void Unsnap()
 [SnapZoneFacade.UnityEvent]: SnapZoneFacade.UnityEvent.md
 [SnapZoneConfigurator]: SnapZoneConfigurator.md
 [SnapZoneFacade.SnapZoneState]: SnapZoneFacade.SnapZoneState.md
+[AutoSnapThrownObjects]: SnapZoneFacade.md#AutoSnapThrownObjects
 [SnapValidity]: SnapZoneFacade.md#SnapValidity
 [TransitionDuration]: SnapZoneFacade.md#TransitionDuration
 [Inheritance]: #Inheritance
@@ -261,6 +284,7 @@ public virtual void Unsnap()
 [Snapped]: #Snapped
 [Unsnapped]: #Unsnapped
 [Properties]: #Properties
+[AutoSnapThrownObjects]: #AutoSnapThrownObjects
 [Configuration]: #Configuration
 [InitialSnappedInteractable]: #InitialSnappedInteractable
 [SnappableGameObjects]: #SnappableGameObjects
@@ -269,6 +293,7 @@ public virtual void Unsnap()
 [TransitionDuration]: #TransitionDuration
 [ZoneState]: #ZoneState
 [Methods]: #Methods
+[OnAfterAutoSnapThrownObjectsChange()]: #OnAfterAutoSnapThrownObjectsChange
 [OnAfterSnapValidityChange()]: #OnAfterSnapValidityChange
 [OnAfterTransitionDurationChange()]: #OnAfterTransitionDurationChange
 [Snap(GameObject)]: #SnapGameObject
