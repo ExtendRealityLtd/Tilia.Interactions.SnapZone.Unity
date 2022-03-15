@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.6.5](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.6.4...v1.6.5) (2022-03-15)
+
+#### Miscellaneous Chores
+
+* **dependabot:** remove bddckr from reviewers ([fb99ad0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/fb99ad00db2ad391c9940606b777f3319ca8cded))
+  > Chris hasn't been actively part of the project for a while.
+* **deps:** bump io.extendreality.tilia.interactions.interactables.unity ([175644f](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/175644f08478a6e8b74d133ddcda062f95540270))
+  > Bumps [io.extendreality.tilia.interactions.interactables.unity](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity) from 1.24.0 to 1.24.1. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/compare/v1.24.0...v1.24.1)
+* **deps:** bump io.extendreality.tilia.mutators.objectfollower.unity ([2fdfd28](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/2fdfd287ce5a7a5f2c67f26c48d8e54af64e4662))
+  > Bumps [io.extendreality.tilia.mutators.objectfollower.unity](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity) from 1.3.0 to 1.3.1. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/compare/v1.3.0...v1.3.1)
+
 ### [1.6.4](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.6.3...v1.6.4) (2022-03-15)
 
 #### Miscellaneous Chores
