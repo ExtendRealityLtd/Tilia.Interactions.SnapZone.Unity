@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.6.5...v1.7.0) (2022-03-15)
+
+#### Features
+
+* **Prefabs:** add auto snap thrown objects option ([d087e43](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/d087e43d351e1f57e103a6f0a9e61665171a90f3))
+  > The new Auto Snap Thrown Objects option allows an object to auto snap to a snap zone as soon as the valid object enters it even if the object is not being held at the point of entering.
+
 ### [1.6.5](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v1.6.4...v1.6.5) (2022-03-15)
 
 #### Miscellaneous Chores
