@@ -24,6 +24,7 @@ The public interface into the Interactions SnapZone Prefab.
   * [TransitionDuration]
   * [ZoneState]
 * [Methods]
+  * [ClearSnapValidity()]
   * [OnAfterAutoSnapThrownObjectsChange()]
   * [OnAfterSnapValidityChange()]
   * [OnAfterTransitionDurationChange()]
@@ -149,7 +150,7 @@ Returns the collection of GameObjects that are currently colliding with the snap
 ##### Declaration
 
 ```
-public HeapAllocationFreeReadOnlyList<GameObject> SnappableGameObjects { get; }
+public virtual HeapAllocationFreeReadOnlyList<GameObject> SnappableGameObjects { get; }
 ```
 
 #### SnappedGameObject
@@ -159,7 +160,7 @@ Returns the currently snapped GameObject.
 ##### Declaration
 
 ```
-public GameObject SnappedGameObject { get; }
+public virtual GameObject SnappedGameObject { get; }
 ```
 
 #### SnapValidity
@@ -189,10 +190,20 @@ The state of the SnapZone.
 ##### Declaration
 
 ```
-public SnapZoneFacade.SnapZoneState ZoneState { get; }
+public virtual SnapZoneFacade.SnapZoneState ZoneState { get; }
 ```
 
 ### Methods
+
+#### ClearSnapValidity()
+
+Clears [SnapValidity].
+
+##### Declaration
+
+```
+public virtual void ClearSnapValidity()
+```
 
 #### OnAfterAutoSnapThrownObjectsChange()
 
@@ -270,6 +281,7 @@ public virtual void Unsnap()
 [SnapZoneFacade.UnityEvent]: SnapZoneFacade.UnityEvent.md
 [SnapZoneConfigurator]: SnapZoneConfigurator.md
 [SnapZoneFacade.SnapZoneState]: SnapZoneFacade.SnapZoneState.md
+[SnapValidity]: SnapZoneFacade.md#SnapValidity
 [AutoSnapThrownObjects]: SnapZoneFacade.md#AutoSnapThrownObjects
 [SnapValidity]: SnapZoneFacade.md#SnapValidity
 [TransitionDuration]: SnapZoneFacade.md#TransitionDuration
@@ -293,6 +305,7 @@ public virtual void Unsnap()
 [TransitionDuration]: #TransitionDuration
 [ZoneState]: #ZoneState
 [Methods]: #Methods
+[ClearSnapValidity()]: #ClearSnapValidity
 [OnAfterAutoSnapThrownObjectsChange()]: #OnAfterAutoSnapThrownObjectsChange
 [OnAfterSnapValidityChange()]: #OnAfterSnapValidityChange
 [OnAfterTransitionDurationChange()]: #OnAfterTransitionDurationChange

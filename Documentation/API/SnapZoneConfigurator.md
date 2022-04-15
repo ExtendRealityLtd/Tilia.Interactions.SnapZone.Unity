@@ -88,7 +88,7 @@ protected Coroutine SnapDefaultInteractableRoutine
 
 #### ActivationArea
 
-The [ActivationValidator] that determines if the activation of the zone is valid.
+The [SnapZoneActivator] that determines if the activation area.
 
 ##### Declaration
 
@@ -213,7 +213,7 @@ Returns the collection of GameObjects that are currently colliding with the snap
 ##### Declaration
 
 ```
-public HeapAllocationFreeReadOnlyList<GameObject> SnappableInteractables { get; }
+public virtual HeapAllocationFreeReadOnlyList<GameObject> SnappableInteractables { get; }
 ```
 
 #### SnappedInteractable
@@ -223,7 +223,7 @@ Returns the currently snapped GameObject.
 ##### Declaration
 
 ```
-public GameObject SnappedInteractable { get; }
+public virtual GameObject SnappedInteractable { get; }
 ```
 
 #### SnappedInteractablesList
@@ -453,7 +453,6 @@ public virtual void Unsnap()
 ```
 
 [Tilia.Interactions.SnapZone]: README.md
-[ActivationValidator]: SnapZoneConfigurator.md#ActivationValidator
 [SnapZoneActivator]: SnapZoneActivator.md
 [ActivationValidator]: SnapZoneConfigurator.md#ActivationValidator
 [ActivationValidator]: ActivationValidator.md
