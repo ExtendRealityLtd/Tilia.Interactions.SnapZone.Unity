@@ -1,7 +1,5 @@
 ﻿namespace Tilia.Interactions.SnapZone
 {
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using UnityEngine;
     using Zinnia.Data.Attribute;
     using Zinnia.Tracking.Collision;
@@ -12,24 +10,60 @@
     public class SnapZoneActivator : MonoBehaviour
     {
         #region Facade Settings
+        [Header("Facade Settings")]
+        [Tooltip("The public interface facade.")]
+        [SerializeField]
+        [Restricted]
+        private SnapZoneFacade facade;
         /// <summary>
         /// The public interface facade.
         /// </summary>
-        [Serialized]
-        [field: Header("Facade Settings"), DocumentedByXml, Restricted]
-        public SnapZoneFacade Facade { get; protected set; }
+        public SnapZoneFacade Facade
+        {
+            get
+            {
+                return facade;
+            }
+            protected set
+            {
+                facade = value;
+            }
+        }
+        [Tooltip("The CollisionTracker used for tracking collisions on the zone.")]
+        [SerializeField]
+        [Restricted]
+        private CollisionTracker collisionTracker;
         /// <summary>
         /// The <see cref="CollisionTracker"/> used for tracking collisions on the zone.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public CollisionTracker CollisionTracker { get; protected set; }
+        public CollisionTracker CollisionTracker
+        {
+            get
+            {
+                return collisionTracker;
+            }
+            protected set
+            {
+                collisionTracker = value;
+            }
+        }
+        [Tooltip("The Collider that is used to determine the collidable area for the zone.")]
+        [SerializeField]
+        private Collider collider;
         /// <summary>
         /// The <see cref="Collider"/> that is used to determine the collidable area for the zone.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public Collider Collider { get; set; }
+        public Collider Collider
+        {
+            get
+            {
+                return collider;
+            }
+            set
+            {
+                collider = value;
+            }
+        }
         #endregion
     }
 }

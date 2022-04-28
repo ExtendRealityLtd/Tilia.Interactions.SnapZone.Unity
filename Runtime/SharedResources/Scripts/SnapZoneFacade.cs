@@ -1,15 +1,12 @@
 ﻿namespace Tilia.Interactions.SnapZone
 {
-    using Malimbe.MemberChangeMethod;
-    using Malimbe.MemberClearanceMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using System;
     using Tilia.Interactions.Interactables.Interactables;
     using UnityEngine;
     using UnityEngine.Events;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Type;
+    using Zinnia.Extension;
     using Zinnia.Rule;
 
     /// <summary>
@@ -43,86 +40,151 @@
         }
 
         #region Snap Settings
+        [Header("Snap Settings")]
+        [Tooltip("The rules that determine which GameObject can be snapped to this snap zone.")]
+        [SerializeField]
+        private RuleContainer snapValidity;
         /// <summary>
         /// The rules that determine which <see cref="GameObject"/> can be snapped to this snap zone.
         /// </summary>
-        [Serialized, Cleared]
-        [field: Header("Snap Settings"), DocumentedByXml]
-        public RuleContainer SnapValidity { get; set; }
+        public RuleContainer SnapValidity
+        {
+            get
+            {
+                return snapValidity;
+            }
+            set
+            {
+                snapValidity = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterSnapValidityChange();
+                }
+            }
+        }
+        [Tooltip("The duration for the transition of the snapped GameObject to reach the snap zone destination.")]
+        [SerializeField]
+        private float transitionDuration;
         /// <summary>
         /// The duration for the transition of the snapped <see cref="GameObject"/> to reach the snap zone destination.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public float TransitionDuration { get; set; }
+        public float TransitionDuration
+        {
+            get
+            {
+                return transitionDuration;
+            }
+            set
+            {
+                transitionDuration = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterTransitionDurationChange();
+                }
+            }
+        }
+        [Tooltip("An optional InteractableFacade to snap into the snap zone when the snap zone is enabled.")]
+        [SerializeField]
+        private InteractableFacade initialSnappedInteractable;
         /// <summary>
         /// An optional <see cref="InteractableFacade"/> to snap into the snap zone when the snap zone is enabled.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public InteractableFacade InitialSnappedInteractable { get; set; }
+        public InteractableFacade InitialSnappedInteractable
+        {
+            get
+            {
+                return initialSnappedInteractable;
+            }
+            set
+            {
+                initialSnappedInteractable = value;
+            }
+        }
+        [Tooltip("Whether to auto snap a thrown GameObject into this snap zone even if the GameObject is not being held as it enters the collision area.")]
+        [SerializeField]
+        private bool autoSnapThrownObjects;
         /// <summary>
         /// Whether to auto snap a thrown <see cref="GameObject"/> into this snap zone even if the <see cref="GameObject"/> is not being held as it enters the collision area.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public bool AutoSnapThrownObjects { get; set; }
+        public bool AutoSnapThrownObjects
+        {
+            get
+            {
+                return autoSnapThrownObjects;
+            }
+            set
+            {
+                autoSnapThrownObjects = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterAutoSnapThrownObjectsChange();
+                }
+            }
+        }
         #endregion
 
         #region Reference Settings
+        [Header("Reference Settings")]
+        [Tooltip("The linked Configurator Setup.")]
+        [SerializeField]
+        [Restricted]
+        private SnapZoneConfigurator configuration;
         /// <summary>
         /// The linked Configurator Setup.
         /// </summary>
-        [Serialized]
-        [field: Header("Reference Settings"), DocumentedByXml, Restricted]
-        public SnapZoneConfigurator Configuration { get; protected set; }
+        public SnapZoneConfigurator Configuration
+        {
+            get
+            {
+                return configuration;
+            }
+            protected set
+            {
+                configuration = value;
+            }
+        }
         #endregion
 
         #region Zone Events
         /// <summary>
         /// Emitted when a valid <see cref="GameObject"/> enters the zone.
         /// </summary>
-        [Header("Zone Events"), DocumentedByXml]
+        [Header("Zone Events")]
         public UnityEvent Entered = new UnityEvent();
         /// <summary>
         /// Emitted when a valid <see cref="GameObject"/> exits the zone.
         /// </summary>
-        [DocumentedByXml]
         public UnityEvent Exited = new UnityEvent();
         /// <summary>
         /// Emitted when a valid <see cref="GameObject"/> activates the zone.
         /// </summary>
-        [DocumentedByXml]
         public UnityEvent Activated = new UnityEvent();
         /// <summary>
         /// Emitted when a valid <see cref="GameObject"/> deactivates the zone.
         /// </summary>
-        [DocumentedByXml]
         public UnityEvent Deactivated = new UnityEvent();
         /// <summary>
         /// Emitted when a valid <see cref="GameObject"/> is snapped to the zone.
         /// </summary>
-        [DocumentedByXml]
         public UnityEvent Snapped = new UnityEvent();
         /// <summary>
         /// Emitted when a valid <see cref="GameObject"/> is unsnapped from the zone.
         /// </summary>
-        [DocumentedByXml]
         public UnityEvent Unsnapped = new UnityEvent();
         #endregion
 
         /// <summary>
         /// Returns the collection of <see cref="GameObject"/>s that are currently colliding with the snap zone and are valid to be snapped.
         /// </summary>
-        public HeapAllocationFreeReadOnlyList<GameObject> SnappableGameObjects => Configuration.SnappableInteractables;
+        public virtual HeapAllocationFreeReadOnlyList<GameObject> SnappableGameObjects => Configuration.SnappableInteractables;
         /// <summary>
         /// Returns the currently snapped <see cref="GameObject"/>.
         /// </summary>
-        public GameObject SnappedGameObject => Configuration.SnappedInteractable;
+        public virtual GameObject SnappedGameObject => Configuration.SnappedInteractable;
         /// <summary>
         /// The state of the SnapZone.
         /// </summary>
-        public SnapZoneState ZoneState
+        public virtual SnapZoneState ZoneState
         {
             get
             {
@@ -137,6 +199,19 @@
 
                 return SnapZoneState.ZoneIsEmpty;
             }
+        }
+
+        /// <summary>
+        /// Clears <see cref="SnapValidity"/>.
+        /// </summary>
+        public virtual void ClearSnapValidity()
+        {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
+            SnapValidity = default;
         }
 
         /// <summary>
@@ -168,7 +243,6 @@
         /// <summary>
         /// Called after <see cref="SnapValidity"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(SnapValidity))]
         protected virtual void OnAfterSnapValidityChange()
         {
             Configuration.ConfigureValidityRules();
@@ -177,7 +251,6 @@
         /// <summary>
         /// Called after <see cref="TransitionDuration"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(TransitionDuration))]
         protected virtual void OnAfterTransitionDurationChange()
         {
             Configuration.ConfigurePropertyApplier();
@@ -186,7 +259,6 @@
         /// <summary>
         /// Called after <see cref="AutoSnapThrownObjects"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(AutoSnapThrownObjects))]
         protected virtual void OnAfterAutoSnapThrownObjectsChange()
         {
             Configuration.ConfigureAutoSnap();

@@ -1,7 +1,5 @@
 ﻿namespace Tilia.Interactions.SnapZone
 {
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using System;
     using System.Collections.Generic;
     using Tilia.Interactions.Interactables.Interactables;
@@ -22,18 +20,30 @@
         public class UnityEvent : UnityEvent<GameObject> { }
 
         #region Facade Settings
+        [Header("Facade Settings")]
+        [Tooltip("The public interface facade.")]
+        [SerializeField]
+        [Restricted]
+        private SnapZoneFacade facade;
         /// <summary>
         /// The public interface facade.
         /// </summary>
-        [Serialized]
-        [field: Header("Facade Settings"), DocumentedByXml, Restricted]
-        public SnapZoneFacade Facade { get; protected set; }
+        public SnapZoneFacade Facade
+        {
+            get
+            {
+                return facade;
+            }
+            protected set
+            {
+                facade = value;
+            }
+        }
         #endregion
 
         /// <summary>
         /// Emitted when the SnapZone activation is validated.
         /// </summary>
-        [DocumentedByXml]
         public UnityEvent Validated = new UnityEvent();
 
         /// <summary>

@@ -1,7 +1,5 @@
 ﻿namespace Tilia.Interactions.SnapZone
 {
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using System.Collections;
     using Tilia.Interactions.Interactables.Interactables;
     using Tilia.Interactions.Interactables.Interactables.Grab;
@@ -21,109 +19,290 @@
     public class SnapZoneConfigurator : MonoBehaviour
     {
         #region Facade Settings
+        [Header("Facade Settings")]
+        [Tooltip("The public interface facade.")]
+        [SerializeField]
+        [Restricted]
+        private SnapZoneFacade facade;
         /// <summary>
         /// The public interface facade.
         /// </summary>
-        [Serialized]
-        [field: Header("Facade Settings"), DocumentedByXml, Restricted]
-        public SnapZoneFacade Facade { get; protected set; }
+        public SnapZoneFacade Facade
+        {
+            get
+            {
+                return facade;
+            }
+            protected set
+            {
+                facade = value;
+            }
+        }
         #endregion
 
         #region Reference Settings
+        [Header("Reference Settings")]
+        [Tooltip("The RuleContainerObservableList that determines the valid snappable Interactables.")]
+        [SerializeField]
+        [Restricted]
+        private RuleContainerObservableList validCollisionRules;
         /// <summary>
         /// The <see cref="RuleContainerObservableList"/> that determines the valid snappable Interactables.
         /// </summary>
-        [Serialized]
-        [field: Header("Reference Settings"), DocumentedByXml]
-        public RuleContainerObservableList ValidCollisionRules { get; protected set; }
+        public RuleContainerObservableList ValidCollisionRules
+        {
+            get
+            {
+                return validCollisionRules;
+            }
+            protected set
+            {
+                validCollisionRules = value;
+            }
+        }
+        [Tooltip("The AllRule that takes the ValidCollisionRules.")]
+        [SerializeField]
+        [Restricted]
+        private AllRule allValidRules;
         /// <summary>
         /// The <see cref="AllRule"/> that takes the <see cref="ValidCollisionRules"/>.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public AllRule AllValidRules { get; protected set; }
+        public AllRule AllValidRules
+        {
+            get
+            {
+                return allValidRules;
+            }
+            protected set
+            {
+                allValidRules = value;
+            }
+        }
+        [Tooltip("The InteractableGrabStateEmitter that processes if the interactable entering the zone is being grabbed.")]
+        [SerializeField]
+        [Restricted]
+        private InteractableGrabStateEmitter grabStateEmitter;
         /// <summary>
         /// The <see cref="InteractableGrabStateEmitter"/> that processes if the interactable entering the zone is being grabbed.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public InteractableGrabStateEmitter GrabStateEmitter { get; protected set; }
+        public InteractableGrabStateEmitter GrabStateEmitter
+        {
+            get
+            {
+                return grabStateEmitter;
+            }
+            protected set
+            {
+                grabStateEmitter = value;
+            }
+        }
+        [Tooltip("The SnapZoneActivator that determines if the activation area.")]
+        [SerializeField]
+        [Restricted]
+        private SnapZoneActivator activationArea;
+        /// <summary>
+        /// The <see cref="SnapZoneActivator"/> that determines if the activation area.
+        /// </summary>
+        public SnapZoneActivator ActivationArea
+        {
+            get
+            {
+                return activationArea;
+            }
+            protected set
+            {
+                activationArea = value;
+            }
+        }
+        [Tooltip("The ActivationValidator that determines if the activation of the zone is valid.")]
+        [SerializeField]
+        [Restricted]
+        private ActivationValidator activationValidator;
         /// <summary>
         /// The <see cref="ActivationValidator"/> that determines if the activation of the zone is valid.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public SnapZoneActivator ActivationArea { get; protected set; }
-        /// <summary>
-        /// The <see cref="ActivationValidator"/> that determines if the activation of the zone is valid.
-        /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public ActivationValidator ActivationValidator { get; protected set; }
+        public ActivationValidator ActivationValidator
+        {
+            get
+            {
+                return activationValidator;
+            }
+            protected set
+            {
+                activationValidator = value;
+            }
+        }
+        [Tooltip("The TransformPropertyApplier that transitions the Interactable to the snapped destination.")]
+        [SerializeField]
+        [Restricted]
+        private TransformPropertyApplier propertyApplier;
         /// <summary>
         /// The <see cref="TransformPropertyApplier"/> that transitions the Interactable to the snapped destination.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public TransformPropertyApplier PropertyApplier { get; protected set; }
+        public TransformPropertyApplier PropertyApplier
+        {
+            get
+            {
+                return propertyApplier;
+            }
+            protected set
+            {
+                propertyApplier = value;
+            }
+        }
+        [Tooltip("The GameObjectObservableList containing the list of objects that are currently colliding with the zone.")]
+        [SerializeField]
+        [Restricted]
+        private GameObjectObservableList collidingObjectsList;
         /// <summary>
         /// The <see cref="GameObjectObservableList"/> containing the list of objects that are currently colliding with the zone.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public GameObjectObservableList CollidingObjectsList { get; protected set; }
+        public GameObjectObservableList CollidingObjectsList
+        {
+            get
+            {
+                return collidingObjectsList;
+            }
+            protected set
+            {
+                collidingObjectsList = value;
+            }
+        }
+        [Tooltip("The GameObjectObservableList containing the list of Interactables that can be snapped.")]
+        [SerializeField]
+        [Restricted]
+        private GameObjectObservableList validSnappableInteractablesList;
         /// <summary>
         /// The <see cref="GameObjectObservableList"/> containing the list of Interactables that can be snapped.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public GameObjectObservableList ValidSnappableInteractablesList { get; protected set; }
+        public GameObjectObservableList ValidSnappableInteractablesList
+        {
+            get
+            {
+                return validSnappableInteractablesList;
+            }
+            protected set
+            {
+                validSnappableInteractablesList = value;
+            }
+        }
+        [Tooltip("The GameObjectObservableList containing the list of snapped Interactables.")]
+        [SerializeField]
+        [Restricted]
+        private GameObjectObservableList snappedInteractablesList;
         /// <summary>
         /// The <see cref="GameObjectObservableList"/> containing the list of snapped Interactables.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public GameObjectObservableList SnappedInteractablesList { get; protected set; }
+        public GameObjectObservableList SnappedInteractablesList
+        {
+            get
+            {
+                return snappedInteractablesList;
+            }
+            protected set
+            {
+                snappedInteractablesList = value;
+            }
+        }
+        [Tooltip("The GameObjectEventProxyEmitter that is responsible for processing the snap of a valid dropped Interactable.")]
+        [SerializeField]
+        [Restricted]
+        private GameObjectEventProxyEmitter snapDroppedInteractableProcess;
         /// <summary>
         /// The <see cref="GameObjectEventProxyEmitter"/> that is responsible for processing the snap of a valid dropped Interactable.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public GameObjectEventProxyEmitter SnapDroppedInteractableProcess { get; protected set; }
+        public GameObjectEventProxyEmitter SnapDroppedInteractableProcess
+        {
+            get
+            {
+                return snapDroppedInteractableProcess;
+            }
+            protected set
+            {
+                snapDroppedInteractableProcess = value;
+            }
+        }
+        [Tooltip("The GameObjectEventProxyEmitter that is responsible for forcing an unsnap of the snapped Interactable.")]
+        [SerializeField]
+        [Restricted]
+        private GameObjectEventProxyEmitter forceUnsnapInteractableProcess;
         /// <summary>
         /// The <see cref="GameObjectEventProxyEmitter"/> that is responsible for forcing an unsnap of the snapped Interactable.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public GameObjectEventProxyEmitter ForceUnsnapInteractableProcess { get; protected set; }
+        public GameObjectEventProxyEmitter ForceUnsnapInteractableProcess
+        {
+            get
+            {
+                return forceUnsnapInteractableProcess;
+            }
+            protected set
+            {
+                forceUnsnapInteractableProcess = value;
+            }
+        }
+        [Tooltip("The GameObject that determines the snap destination location.")]
+        [SerializeField]
+        [Restricted]
+        private GameObject destinationLocation;
         /// <summary>
         /// The <see cref="GameObject"/> that determines the snap destination location.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public GameObject DestinationLocation { get; protected set; }
+        public GameObject DestinationLocation
+        {
+            get
+            {
+                return destinationLocation;
+            }
+            protected set
+            {
+                destinationLocation = value;
+            }
+        }
+        [Tooltip("The GameObject that contains the auto snap logic.")]
+        [SerializeField]
+        [Restricted]
+        private GameObject autoSnapLogicContainer;
         /// <summary>
         /// The <see cref="GameObject"/> that contains the auto snap logic.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public GameObject AutoSnapLogicContainer { get; protected set; }
+        public GameObject AutoSnapLogicContainer
+        {
+            get
+            {
+                return autoSnapLogicContainer;
+            }
+            protected set
+            {
+                autoSnapLogicContainer = value;
+            }
+        }
+        [Tooltip("The initial duration to transition the default Interactable to the SnapZone.")]
+        [SerializeField]
+        private float initialTransitionDuration;
         /// <summary>
         /// The initial duration to transition the default Interactable to the SnapZone.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public float InitialTransitionDuration { get; set; }
+        public float InitialTransitionDuration
+        {
+            get
+            {
+                return initialTransitionDuration;
+            }
+            set
+            {
+                initialTransitionDuration = value;
+            }
+        }
         #endregion
 
         /// <summary>
         /// Returns the collection of <see cref="GameObject"/>s that are currently colliding with the snap zone and are valid to be snapped.
         /// </summary>
-        public HeapAllocationFreeReadOnlyList<GameObject> SnappableInteractables => ValidSnappableInteractablesList.NonSubscribableElements;
+        public virtual HeapAllocationFreeReadOnlyList<GameObject> SnappableInteractables => ValidSnappableInteractablesList.NonSubscribableElements;
         /// <summary>
         /// Returns the currently snapped <see cref="GameObject"/>.
         /// </summary>
-        public GameObject SnappedInteractable => SnappedInteractablesList.NonSubscribableElements.Count > 0 ? SnappedInteractablesList.NonSubscribableElements[0] : null;
+        public virtual GameObject SnappedInteractable => SnappedInteractablesList.NonSubscribableElements.Count > 0 ? SnappedInteractablesList.NonSubscribableElements[0] : null;
 
         /// <summary>
         /// An instruction for yielding at the end of the current frame.
