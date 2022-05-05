@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.1.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.0.6...v2.1.0) (2022-05-05)
+
+#### Features
+
+* **Facade:** add methods to prevent and allow grabbing snapped object ([1e55580](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/1e55580c322ee4b003099d940989daa84f8f2abd))
+  > The new methods allow a snap zone to prevent the snapped interactable from being grabbed once it is snapped and also to re-allow the snapped interactable to be grabbed again.
+
+#### Bug Fixes
+
+* **ActivationValidator:** ensure configurator event is called ([c573313](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/c57331367cb87393abd3d931f3d91da6ace32bf9))
+  > The Facade events should not be called directly and they should be called via the configurator so there is a single point of call that all events raised go through.
+* **Configurator:** ensure interactable rigidbody kinematic is prepared ([6a5705e](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/6a5705ef72e9ae7e81552ca0763f8cc0c3ba4807))
+  > The changes to Unity and PhysX cause an issue where the rigidbody kinematic state change causes the collision detection to call exit and enter again in the same frame which means the snap zone exit and enter is called when an object is dropped into the zone even though the object never exited the snap zone.
+  > 
+  > A solution in the Zinnia Collision Tracker was added that allows a rigidbody to be marked for kinematic state change to overcome the issue at hand. The snap zone now utilizes the additional events on the interactable to know when the kinematic state changes so it can prepare the snap zone Collision Tracker to ensure it doesn't capture the additional enter/exit events when the interactable kinematic state changes.
+
 ### [2.0.6](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.0.5...v2.0.6) (2022-05-05)
 
 #### Miscellaneous Chores
