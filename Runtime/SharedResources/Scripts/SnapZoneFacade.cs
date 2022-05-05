@@ -241,6 +241,50 @@
         }
 
         /// <summary>
+        /// Prevents the snapped object from being grabbed.
+        /// </summary>
+        public virtual void PreventSnappedObjectGrab()
+        {
+            ToggleSnappedObjectGrab(false);
+        }
+
+        /// <summary>
+        /// Allows the snapped object to be grabbed.
+        /// </summary>
+        public virtual void AllowSnappedObjectGrab()
+        {
+            ToggleSnappedObjectGrab(true);
+        }
+
+        /// <summary>
+        /// Toggles the grabbed state of the snapped object.
+        /// </summary>
+        /// <param name="allow">Whether to allow the snapped object to be grabbed.</param>
+        protected virtual void ToggleSnappedObjectGrab(bool allow)
+        {
+            if (SnappedGameObject == null)
+            {
+                return;
+            }
+
+            InteractableFacade interactable = SnappedGameObject.GetComponent<InteractableFacade>();
+
+            if (interactable == null)
+            {
+                return;
+            }
+
+            if (allow)
+            {
+                interactable.EnableGrab();
+            }
+            else
+            {
+                interactable.DisableGrab();
+            }
+        }
+
+        /// <summary>
         /// Called after <see cref="SnapValidity"/> has been changed.
         /// </summary>
         protected virtual void OnAfterSnapValidityChange()
