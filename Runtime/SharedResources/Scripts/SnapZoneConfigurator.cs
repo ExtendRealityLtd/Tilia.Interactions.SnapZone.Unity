@@ -319,6 +319,20 @@
         private const float InitialOffset = 0.05f;
 
         /// <summary>
+        /// Prepares the given <see cref="Rigidbody"/> for a kinematic state change.
+        /// </summary>
+        /// <param name="target">The rigidbody to prepare.</param>
+        public virtual void PrepareKinematicStateChange(Rigidbody target)
+        {
+            if (target == null)
+            {
+                return;
+            }
+
+            ActivationArea.CollisionTracker.PrepareKinematicStateChange(target);
+        }
+
+        /// <summary>
         /// Attempts to snap a given <see cref="GameObject"/> to the snap zone.
         /// </summary>
         /// <param name="objectToSnap">The object to attempt to snap.</param>
@@ -366,7 +380,7 @@
                 return;
             }
 
-            ForceUnsnapInteractableProcess.Receive(SnappedInteractable.gameObject);
+            ForceUnsnapInteractableProcess.Receive(SnappedInteractable);
         }
 
         /// <summary>
@@ -403,7 +417,7 @@
         /// <param name="activator">The <see cref="GameObject"/> that has activated the zone.</param>
         public virtual void EmitActivated(GameObject activator)
         {
-            if (activator == null)
+            if (activator == null || SnappedInteractable != null)
             {
                 return;
             }
@@ -417,7 +431,7 @@
         /// <param name="deactivator">The <see cref="GameObject"/> that has deactivated the zone.</param>
         public virtual void EmitDeactivated(GameObject deactivator)
         {
-            if (deactivator == null)
+            if (deactivator == null || SnappedInteractable != null)
             {
                 return;
             }

@@ -40,6 +40,7 @@ Sets up the Interactions SnapZone Prefab based on the provided user settings.
   * [EmitUnsnapped(GameObject)]
   * [OnDisable()]
   * [OnEnable()]
+  * [PrepareKinematicStateChange(Rigidbody)]
   * [ProcessOtherSnappablesOnSnap()]
   * [Snap(GameObject)]
   * [SnapInitialAtEndOfFrame()]
@@ -400,6 +401,22 @@ protected virtual void OnDisable()
 protected virtual void OnEnable()
 ```
 
+#### PrepareKinematicStateChange(Rigidbody)
+
+Prepares the given Rigidbody for a kinematic state change.
+
+##### Declaration
+
+```
+public virtual void PrepareKinematicStateChange(Rigidbody target)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Rigidbody | target | The rigidbody to prepare. |
+
 #### ProcessOtherSnappablesOnSnap()
 
 Attempts to process any other valid snappable objects against any other potential SnapZones if their primary activating zone is snapped by another object.
@@ -494,6 +511,7 @@ public virtual void Unsnap()
 [EmitUnsnapped(GameObject)]: #EmitUnsnappedGameObject
 [OnDisable()]: #OnDisable
 [OnEnable()]: #OnEnable
+[PrepareKinematicStateChange(Rigidbody)]: #PrepareKinematicStateChangeRigidbody
 [ProcessOtherSnappablesOnSnap()]: #ProcessOtherSnappablesOnSnap
 [Snap(GameObject)]: #SnapGameObject
 [SnapInitialAtEndOfFrame()]: #SnapInitialAtEndOfFrame

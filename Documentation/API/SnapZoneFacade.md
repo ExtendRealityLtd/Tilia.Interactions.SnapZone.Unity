@@ -24,12 +24,15 @@ The public interface into the Interactions SnapZone Prefab.
   * [TransitionDuration]
   * [ZoneState]
 * [Methods]
+  * [AllowSnappedObjectGrab()]
   * [ClearSnapValidity()]
   * [OnAfterAutoSnapThrownObjectsChange()]
   * [OnAfterSnapValidityChange()]
   * [OnAfterTransitionDurationChange()]
+  * [PreventSnappedObjectGrab()]
   * [Snap(GameObject)]
   * [Snap(InteractableFacade)]
+  * [ToggleSnappedObjectGrab(Boolean)]
   * [Unsnap()]
 
 ## Details
@@ -195,6 +198,16 @@ public virtual SnapZoneFacade.SnapZoneState ZoneState { get; }
 
 ### Methods
 
+#### AllowSnappedObjectGrab()
+
+Allows the snapped object to be grabbed.
+
+##### Declaration
+
+```
+public virtual void AllowSnappedObjectGrab()
+```
+
 #### ClearSnapValidity()
 
 Clears [SnapValidity].
@@ -235,6 +248,16 @@ Called after [TransitionDuration] has been changed.
 protected virtual void OnAfterTransitionDurationChange()
 ```
 
+#### PreventSnappedObjectGrab()
+
+Prevents the snapped object from being grabbed.
+
+##### Declaration
+
+```
+public virtual void PreventSnappedObjectGrab()
+```
+
 #### Snap(GameObject)
 
 Attempts to snap a given GameObject to the snap zone.
@@ -266,6 +289,22 @@ public virtual void Snap(InteractableFacade interactableToSnap)
 | Type | Name | Description |
 | --- | --- | --- |
 | InteractableFacade | interactableToSnap | The interactable to attempt to snap. |
+
+#### ToggleSnappedObjectGrab(Boolean)
+
+Toggles the grabbed state of the snapped object.
+
+##### Declaration
+
+```
+protected virtual void ToggleSnappedObjectGrab(bool allow)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Boolean | allow | Whether to allow the snapped object to be grabbed. |
 
 #### Unsnap()
 
@@ -305,10 +344,13 @@ public virtual void Unsnap()
 [TransitionDuration]: #TransitionDuration
 [ZoneState]: #ZoneState
 [Methods]: #Methods
+[AllowSnappedObjectGrab()]: #AllowSnappedObjectGrab
 [ClearSnapValidity()]: #ClearSnapValidity
 [OnAfterAutoSnapThrownObjectsChange()]: #OnAfterAutoSnapThrownObjectsChange
 [OnAfterSnapValidityChange()]: #OnAfterSnapValidityChange
 [OnAfterTransitionDurationChange()]: #OnAfterTransitionDurationChange
+[PreventSnappedObjectGrab()]: #PreventSnappedObjectGrab
 [Snap(GameObject)]: #SnapGameObject
 [Snap(InteractableFacade)]: #SnapInteractableFacade
+[ToggleSnappedObjectGrab(Boolean)]: #ToggleSnappedObjectGrabBoolean
 [Unsnap()]: #Unsnap

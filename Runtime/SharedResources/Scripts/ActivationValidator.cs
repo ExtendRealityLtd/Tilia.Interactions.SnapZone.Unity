@@ -167,7 +167,7 @@
             if (IsActivated)
             {
                 IsActivated = false;
-                Facade.Deactivated?.Invoke(deactivator);
+                Facade.Configuration.EmitDeactivated(deactivator);
             }
 
             InteractableFacade deactivatingInteractable = TryGetInteractable(deactivator);
