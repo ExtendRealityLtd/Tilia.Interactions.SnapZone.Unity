@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.1.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.1.0...v2.1.1) (2022-05-09)
+
+#### Bug Fixes
+
+* **Configurator:** ensure prepare kinematic change is called everywhere ([bb05024](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/bb05024b2315526115b7ec713d3fbf0008271069))
+  > The PrepareKinematicStateChange mechanism was only being called when the Interactable was directly placed within the snap zone, if it was dropped from above and the auto snap was on then the logic would never be called and therefore the double exit/enter would occur.
+  > 
+  > This fixes it by providing more methods for preparing the state change with different object types just for completeness and then the prefab now ensures before the rigidbody state is changed on the interactable that it prepares the collider tracker for this state change.
+
 ## [2.1.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.0.6...v2.1.0) (2022-05-05)
 
 #### Features
