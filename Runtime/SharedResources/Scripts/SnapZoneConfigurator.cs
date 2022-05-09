@@ -333,6 +333,35 @@
         }
 
         /// <summary>
+        /// Prepares the given <see cref="InteractableFacade"/> for a kinematic state change.
+        /// </summary>
+        /// <param name="target">The interactable to prepare.</param>
+        public virtual void PrepareKinematicStateChange(InteractableFacade target)
+        {
+            if(target == null)
+            {
+                return;
+            }
+
+            PrepareKinematicStateChange(target.Configuration.ConsumerRigidbody);
+        }
+
+        /// <summary>
+        /// Prepares the given <see cref="GameObject"/> for a kinematic state change.
+        /// </summary>
+        /// <param name="target">The GameObject to prepare.</param>
+        public virtual void PrepareKinematicStateChange(GameObject target)
+        {
+            InteractableFacade interactable = target.TryGetComponent<InteractableFacade>(true, true);
+            if (interactable == null)
+            {
+                return;
+            }
+
+            PrepareKinematicStateChange(interactable.Configuration.ConsumerRigidbody);
+        }
+
+        /// <summary>
         /// Attempts to snap a given <see cref="GameObject"/> to the snap zone.
         /// </summary>
         /// <param name="objectToSnap">The object to attempt to snap.</param>
