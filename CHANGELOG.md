@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.17](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.1.16...v2.1.17) (2022-07-05)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.interactions.interactables.unity ([38bfe4b](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/38bfe4bb773e80c2f4e0845dbe50489524b9638b))
+  > Bumps [io.extendreality.tilia.interactions.interactables.unity](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity) from 2.6.1 to 2.7.0. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/compare/v2.6.1...v2.7.0)
+
 ### [2.1.16](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.1.15...v2.1.16) (2022-06-25)
 
 #### Miscellaneous Chores
