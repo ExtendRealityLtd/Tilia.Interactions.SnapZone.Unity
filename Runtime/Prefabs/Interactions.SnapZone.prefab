@@ -3401,6 +3401,7 @@ GameObject:
   - component: {fileID: 8407923665379814194}
   - component: {fileID: 8407923665379814192}
   - component: {fileID: 8407923665379814195}
+  - component: {fileID: 5187048097810434841}
   m_Layer: 0
   m_Name: DefaultHighlightMesh
   m_TagString: Untagged
@@ -3467,6 +3468,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5187048097810434841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8407923665379814197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b57956047a5624db03bc5a1afe6900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 8407923665379814195}
+  pipelines:
+  - pipelineName: (?i)default
+    materials:
+    - {fileID: 2100000, guid: e1802e4f7b45aca4e979a361bc7edcfe, type: 2}
+  - pipelineName: (?i)urp
+    materials:
+    - {fileID: 2100000, guid: cac370e18424aeb40b14e48b6086e96c, type: 2}
+  - pipelineName: (?i)hdrp
+    materials:
+    - {fileID: 2100000, guid: cac370e18424aeb40b14e48b6086e96c, type: 2}
 --- !u!1 &8407923665391782912
 GameObject:
   m_ObjectHideFlags: 0
