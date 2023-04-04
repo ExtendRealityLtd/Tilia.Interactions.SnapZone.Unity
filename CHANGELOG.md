@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.1.54...v2.2.0) (2023-04-04)
+
+#### Features
+
+* **Resources:** add multiple render pipeline materials ([657345b](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/657345b433f13d4cbc88df188e313e45956348d6))
+  > The prefab now uses the Pipeline Material Applier to provide multiple material types for the main render pipelines to improve compatibility.
+
 ### [2.1.54](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.1.53...v2.1.54) (2023-04-03)
 
 #### Miscellaneous Chores
