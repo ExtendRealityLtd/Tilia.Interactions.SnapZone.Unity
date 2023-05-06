@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.13](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.2.12...v2.2.13) (2023-05-06)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.mutators.objectfollower.unity ([54c11ca](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/54c11caa644d3dc4bcde7fa5491680e851df0ee7))
+  > Bumps [io.extendreality.tilia.mutators.objectfollower.unity](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity) from 2.0.15 to 2.0.16. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/compare/v2.0.15...v2.0.16)
+
 ### [2.2.12](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.2.11...v2.2.12) (2023-05-06)
 
 #### Miscellaneous Chores
