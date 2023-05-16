@@ -6,11 +6,13 @@
     using UnityEngine;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Collection.List;
+    using Zinnia.Data.Enum;
     using Zinnia.Data.Type;
     using Zinnia.Event.Proxy;
     using Zinnia.Extension;
     using Zinnia.Rule;
     using Zinnia.Rule.Collection;
+    using Zinnia.Tracking.Follow;
     using Zinnia.Tracking.Modification;
 
     /// <summary>
@@ -33,7 +35,7 @@
             {
                 return facade;
             }
-            protected set
+            set
             {
                 facade = value;
             }
@@ -55,7 +57,7 @@
             {
                 return validCollisionRules;
             }
-            protected set
+            set
             {
                 validCollisionRules = value;
             }
@@ -73,7 +75,7 @@
             {
                 return allValidRules;
             }
-            protected set
+            set
             {
                 allValidRules = value;
             }
@@ -91,7 +93,7 @@
             {
                 return grabStateEmitter;
             }
-            protected set
+            set
             {
                 grabStateEmitter = value;
             }
@@ -109,7 +111,7 @@
             {
                 return activationArea;
             }
-            protected set
+            set
             {
                 activationArea = value;
             }
@@ -127,7 +129,7 @@
             {
                 return activationValidator;
             }
-            protected set
+            set
             {
                 activationValidator = value;
             }
@@ -145,7 +147,7 @@
             {
                 return propertyApplier;
             }
-            protected set
+            set
             {
                 propertyApplier = value;
             }
@@ -163,7 +165,7 @@
             {
                 return collidingObjectsList;
             }
-            protected set
+            set
             {
                 collidingObjectsList = value;
             }
@@ -181,7 +183,7 @@
             {
                 return validSnappableInteractablesList;
             }
-            protected set
+            set
             {
                 validSnappableInteractablesList = value;
             }
@@ -199,7 +201,7 @@
             {
                 return snappedInteractablesList;
             }
-            protected set
+            set
             {
                 snappedInteractablesList = value;
             }
@@ -217,7 +219,7 @@
             {
                 return snapDroppedInteractableProcess;
             }
-            protected set
+            set
             {
                 snapDroppedInteractableProcess = value;
             }
@@ -235,9 +237,63 @@
             {
                 return forceUnsnapInteractableProcess;
             }
-            protected set
+            set
             {
                 forceUnsnapInteractableProcess = value;
+            }
+        }
+        [Tooltip("The GameObject that holds the highlight mesh container.")]
+        [SerializeField]
+        [Restricted]
+        private GameObject highlightMeshContainer;
+        /// <summary>
+        /// The <see cref="GameObject"/> that holds the highlight mesh containerc.
+        /// </summary>
+        public GameObject HighlightMeshContainer
+        {
+            get
+            {
+                return highlightMeshContainer;
+            }
+            set
+            {
+                highlightMeshContainer = value;
+            }
+        }
+        [Tooltip("The GameObject that holds the highlight on hover logic.")]
+        [SerializeField]
+        [Restricted]
+        private GameObject highlightLogicContainer;
+        /// <summary>
+        /// The <see cref="GameObject"/> that holds the highlight on hover logic.
+        /// </summary>
+        public GameObject HighlightLogicContainer
+        {
+            get
+            {
+                return highlightLogicContainer;
+            }
+            set
+            {
+                highlightLogicContainer = value;
+            }
+        }
+        [Tooltip("The GameObject that holds the highlight on hover logic.")]
+        [SerializeField]
+        [Restricted]
+        private ObjectFollower follower;
+        /// <summary>
+        /// The <see cref="GameObject"/> that holds the highlight on hover logic.
+        /// </summary>
+        public ObjectFollower Follower
+        {
+            get
+            {
+                return follower;
+            }
+            set
+            {
+                follower = value;
             }
         }
         [Tooltip("The GameObject that determines the snap destination location.")]
@@ -253,7 +309,7 @@
             {
                 return destinationLocation;
             }
-            protected set
+            set
             {
                 destinationLocation = value;
             }
@@ -271,7 +327,7 @@
             {
                 return autoSnapLogicContainer;
             }
-            protected set
+            set
             {
                 autoSnapLogicContainer = value;
             }
@@ -338,7 +394,7 @@
         /// <param name="target">The interactable to prepare.</param>
         public virtual void PrepareKinematicStateChange(InteractableFacade target)
         {
-            if(target == null)
+            if (target == null)
             {
                 return;
             }
@@ -520,6 +576,27 @@
         }
 
         /// <summary>
+        /// Configures the highlight logic of the snap zone.
+        /// </summary>
+        public virtual void ConfigureHighlightLogic()
+        {
+            HighlightLogicContainer.SetActive(!Facade.HighlightAlwaysActive);
+            if (Facade.HighlightAlwaysActive && SnappedInteractable == null)
+            {
+                HighlightMeshContainer.SetActive(true);
+            }
+        }
+
+        /// <summary>
+        /// Configures whether the snap zone will scale the target snapped object.
+        /// </summary>
+        public virtual void ConfigureSnapZoneScaling()
+        {
+            Follower.FollowModifier.ScaleModifier.gameObject.SetActive(Facade.ApplySnapZoneScale);
+            propertyApplier.ApplyTransformations = Facade.ApplySnapZoneScale ? (TransformProperties)(-1) : TransformProperties.Position | TransformProperties.Rotation;
+        }
+
+        /// <summary>
         /// Configures the auto snap logic.
         /// </summary>
         public virtual void ConfigureAutoSnap()
@@ -565,6 +642,8 @@
         {
             ConfigureValidityRules();
             ConfigurePropertyApplier();
+            ConfigureHighlightLogic();
+            ConfigureSnapZoneScaling();
             ConfigureAutoSnap();
             SnapDefaultInteractableRoutine = StartCoroutine(SnapInitialAtEndOfFrame());
 

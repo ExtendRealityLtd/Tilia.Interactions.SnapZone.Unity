@@ -15,8 +15,10 @@ The public interface into the Interactions SnapZone Prefab.
   * [Snapped]
   * [Unsnapped]
 * [Properties]
+  * [ApplySnapZoneScale]
   * [AutoSnapThrownObjects]
   * [Configuration]
+  * [HighlightAlwaysActive]
   * [InitialSnappedInteractable]
   * [SnappableGameObjects]
   * [SnappedGameObject]
@@ -26,7 +28,9 @@ The public interface into the Interactions SnapZone Prefab.
 * [Methods]
   * [AllowSnappedObjectGrab()]
   * [ClearSnapValidity()]
+  * [OnAfterApplySnapZoneScaleChange()]
   * [OnAfterAutoSnapThrownObjectsChange()]
+  * [OnAfterHighlightAlwaysActiveChange()]
   * [OnAfterSnapValidityChange()]
   * [OnAfterTransitionDurationChange()]
   * [PreventSnappedObjectGrab()]
@@ -116,6 +120,16 @@ public SnapZoneFacade.UnityEvent Unsnapped
 
 ### Properties
 
+#### ApplySnapZoneScale
+
+Whether to apply the scale of the snap zone to the target that is snapped into it.
+
+##### Declaration
+
+```
+public bool ApplySnapZoneScale { get; set; }
+```
+
 #### AutoSnapThrownObjects
 
 Whether to auto snap a thrown GameObject into this snap zone even if the GameObject is not being held as it enters the collision area.
@@ -133,7 +147,17 @@ The linked Configurator Setup.
 ##### Declaration
 
 ```
-public SnapZoneConfigurator Configuration { get; protected set; }
+public SnapZoneConfigurator Configuration { get; set; }
+```
+
+#### HighlightAlwaysActive
+
+Whether the snap zone highlight is always active or only active when the snap zone is actively hovered in.
+
+##### Declaration
+
+```
+public bool HighlightAlwaysActive { get; set; }
 ```
 
 #### InitialSnappedInteractable
@@ -218,6 +242,16 @@ Clears [SnapValidity].
 public virtual void ClearSnapValidity()
 ```
 
+#### OnAfterApplySnapZoneScaleChange()
+
+Called after [ApplySnapZoneScale] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterApplySnapZoneScaleChange()
+```
+
 #### OnAfterAutoSnapThrownObjectsChange()
 
 Called after [AutoSnapThrownObjects] has been changed.
@@ -226,6 +260,16 @@ Called after [AutoSnapThrownObjects] has been changed.
 
 ```
 protected virtual void OnAfterAutoSnapThrownObjectsChange()
+```
+
+#### OnAfterHighlightAlwaysActiveChange()
+
+Called after [HighlightAlwaysActive] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterHighlightAlwaysActiveChange()
 ```
 
 #### OnAfterSnapValidityChange()
@@ -321,7 +365,9 @@ public virtual void Unsnap()
 [SnapZoneConfigurator]: SnapZoneConfigurator.md
 [SnapZoneFacade.SnapZoneState]: SnapZoneFacade.SnapZoneState.md
 [SnapValidity]: SnapZoneFacade.md#SnapValidity
+[ApplySnapZoneScale]: SnapZoneFacade.md#ApplySnapZoneScale
 [AutoSnapThrownObjects]: SnapZoneFacade.md#AutoSnapThrownObjects
+[HighlightAlwaysActive]: SnapZoneFacade.md#HighlightAlwaysActive
 [SnapValidity]: SnapZoneFacade.md#SnapValidity
 [TransitionDuration]: SnapZoneFacade.md#TransitionDuration
 [Inheritance]: #Inheritance
@@ -335,8 +381,10 @@ public virtual void Unsnap()
 [Snapped]: #Snapped
 [Unsnapped]: #Unsnapped
 [Properties]: #Properties
+[ApplySnapZoneScale]: #ApplySnapZoneScale
 [AutoSnapThrownObjects]: #AutoSnapThrownObjects
 [Configuration]: #Configuration
+[HighlightAlwaysActive]: #HighlightAlwaysActive
 [InitialSnappedInteractable]: #InitialSnappedInteractable
 [SnappableGameObjects]: #SnappableGameObjects
 [SnappedGameObject]: #SnappedGameObject
@@ -346,7 +394,9 @@ public virtual void Unsnap()
 [Methods]: #Methods
 [AllowSnappedObjectGrab()]: #AllowSnappedObjectGrab
 [ClearSnapValidity()]: #ClearSnapValidity
+[OnAfterApplySnapZoneScaleChange()]: #OnAfterApplySnapZoneScaleChange
 [OnAfterAutoSnapThrownObjectsChange()]: #OnAfterAutoSnapThrownObjectsChange
+[OnAfterHighlightAlwaysActiveChange()]: #OnAfterHighlightAlwaysActiveChange
 [OnAfterSnapValidityChange()]: #OnAfterSnapValidityChange
 [OnAfterTransitionDurationChange()]: #OnAfterTransitionDurationChange
 [PreventSnappedObjectGrab()]: #PreventSnappedObjectGrab
