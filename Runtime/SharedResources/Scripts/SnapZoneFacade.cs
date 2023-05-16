@@ -100,6 +100,48 @@
                 initialSnappedInteractable = value;
             }
         }
+        [Tooltip("Whether to apply the scale of the snap zone to the target that is snapped into it.")]
+        [SerializeField]
+        private bool applySnapZoneScale = true;
+        /// <summary>
+        /// Whether to apply the scale of the snap zone to the target that is snapped into it.
+        /// </summary>
+        public bool ApplySnapZoneScale
+        {
+            get
+            {
+                return applySnapZoneScale;
+            }
+            set
+            {
+                applySnapZoneScale = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterApplySnapZoneScaleChange();
+                }
+            }
+        }
+        [Tooltip("Whether the snap zone highlight is always active or only active when the snap zone is actively hovered in.")]
+        [SerializeField]
+        private bool highlightAlwaysActive;
+        /// <summary>
+        /// Whether the snap zone highlight is always active or only active when the snap zone is actively hovered in.
+        /// </summary>
+        public bool HighlightAlwaysActive
+        {
+            get
+            {
+                return highlightAlwaysActive;
+            }
+            set
+            {
+                highlightAlwaysActive = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterHighlightAlwaysActiveChange();
+                }
+            }
+        }
         [Tooltip("Whether to auto snap a thrown GameObject into this snap zone even if the GameObject is not being held as it enters the collision area.")]
         [SerializeField]
         private bool autoSnapThrownObjects;
@@ -138,7 +180,7 @@
             {
                 return configuration;
             }
-            protected set
+            set
             {
                 configuration = value;
             }
@@ -298,6 +340,22 @@
         protected virtual void OnAfterTransitionDurationChange()
         {
             Configuration.ConfigurePropertyApplier();
+        }
+
+        /// <summary>
+        /// Called after <see cref="HighlightAlwaysActive"/> has been changed.
+        /// </summary>
+        protected virtual void OnAfterHighlightAlwaysActiveChange()
+        {
+            Configuration.ConfigureHighlightLogic();
+        }
+
+        /// <summary>
+        /// Called after <see cref="ApplySnapZoneScale"/> has been changed.
+        /// </summary>
+        protected virtual void OnAfterApplySnapZoneScaleChange()
+        {
+            Configuration.ConfigureSnapZoneScaling();
         }
 
         /// <summary>

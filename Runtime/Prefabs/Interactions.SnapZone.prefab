@@ -2046,7 +2046,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8407923664845045255
 MonoBehaviour:
@@ -2204,6 +2204,7 @@ MonoBehaviour:
     forwardSource: {fileID: 0}
     isTrigger: 0
     colliderData: {fileID: 0}
+  extractCompoundParent: 1
 --- !u!1 &8407923664929508104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3448,7 +3449,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e1802e4f7b45aca4e979a361bc7edcfe, type: 2}
+  - {fileID: 2100000, guid: cac370e18424aeb40b14e48b6086e96c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3484,7 +3485,7 @@ MonoBehaviour:
   pipelines:
   - pipelineName: (?i)default
     materials:
-    - {fileID: 2100000, guid: e1802e4f7b45aca4e979a361bc7edcfe, type: 2}
+    - {fileID: 2100000, guid: cac370e18424aeb40b14e48b6086e96c, type: 2}
   - pipelineName: (?i)urp
     materials:
     - {fileID: 2100000, guid: cac370e18424aeb40b14e48b6086e96c, type: 2}
@@ -3904,6 +3905,7 @@ MonoBehaviour:
     forwardSource: {fileID: 0}
     isTrigger: 0
     colliderData: {fileID: 0}
+  extractCompoundParent: 1
 --- !u!1 &8407923665507313185
 GameObject:
   m_ObjectHideFlags: 0
@@ -4833,6 +4835,8 @@ MonoBehaviour:
     field: {fileID: 0}
   transitionDuration: 0
   initialSnappedInteractable: {fileID: 0}
+  highlightAlwaysActive: 0
+  applySnapZoneScale: 1
   autoSnapThrownObjects: 0
   configuration: {fileID: 8407923666110382458}
   Entered:
@@ -5524,6 +5528,9 @@ MonoBehaviour:
   snappedInteractablesList: {fileID: 8407923665559923119}
   snapDroppedInteractableProcess: {fileID: 8407923664943525174}
   forceUnsnapInteractableProcess: {fileID: 8407923664429067986}
+  highlightMeshContainer: {fileID: 8407923664662382997}
+  highlightLogicContainer: {fileID: 8407923664967594663}
+  follower: {fileID: 5740525694681145957}
   destinationLocation: {fileID: 8407923664650951421}
   autoSnapLogicContainer: {fileID: 5185142757575960199}
   initialTransitionDuration: 0
@@ -5811,6 +5818,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5634598753569639371}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5740525694681145957 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114960550120155566, guid: 9aa99d00578590e45a52faa205a1014a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5634598753569639371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b5781728bc3ef47af5d7aca57b0e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6730208074106967650 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1392910959889882537, guid: 9aa99d00578590e45a52faa205a1014a,
