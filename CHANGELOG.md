@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.2.15...v2.3.0) (2023-05-16)
+
+#### Features
+
+* **Facade:** add option for highlight always on and scale optional ([a0c4fe8](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/a0c4fe8b611ce7511cb671466e1cc5a903e1b931))
+  > The Facade now has the ability to set the highlight object as always on when the snap zone is not being used or hovered over. There is also another option that allows the scaling properties of the snap zone to be optional so it doesnt change the size of the snapped object upon being snapped to the zone.
+
 ### [2.2.15](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.2.14...v2.2.15) (2023-05-06)
 
 #### Miscellaneous Chores
