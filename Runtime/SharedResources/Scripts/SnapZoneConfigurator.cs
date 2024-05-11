@@ -368,11 +368,15 @@
         /// The <see cref="Coroutine"/> for managing the default initial snap.
         /// </summary>
         protected Coroutine SnapDefaultInteractableRoutine;
+        /// <summary>
+        /// A container for caching the snapped interactable when hiding the snap zone.
+        /// </summary>
+        protected InteractableFacade cachedSnappedInteractable;
 
         /// <summary>
         /// An offset to apply upon snap if the snapped <see cref="GameObject"/> is in the same position as the <see cref="DestinationLocation"/> to ensure the follower works correctly.
         /// </summary>
-        private const float InitialOffset = 0.05f;
+        protected float InitialOffset = 0.05f;
 
         /// <summary>
         /// Prepares the given <see cref="Rigidbody"/> for a kinematic state change.
@@ -469,6 +473,34 @@
         }
 
         /// <summary>
+        /// Attempts to gracefully disable the snap zone.
+        /// </summary>
+        public virtual void Hide()
+        {
+            cachedSnappedInteractable = SnappedInteractable.TryGetComponent<InteractableFacade>();
+            Unsnap();
+            if (cachedSnappedInteractable != null)
+            {
+                cachedSnappedInteractable.IsVisible = false;
+            }
+            facade.gameObject.SetActive(false);
+        }
+
+        /// <summary>
+        /// Attempts to gracefully enable the snap zone after being hidden.
+        /// </summary>
+        public virtual void Show()
+        {
+            facade.gameObject.SetActive(true);
+            if (cachedSnappedInteractable != null)
+            {
+                cachedSnappedInteractable.IsVisible = true;
+                Snap(cachedSnappedInteractable.gameObject);
+            }
+            cachedSnappedInteractable = null;
+        }
+
+        /// <summary>
         /// Emits the Entered event.
         /// </summary>
         /// <param name="entered">The <see cref="GameObject"/> that has entered the zone.</param>
@@ -557,14 +589,7 @@
         /// </summary>
         public virtual void ConfigureValidityRules()
         {
-            if (ValidCollisionRules.NonSubscribableElements.Count > 1)
-            {
-                ValidCollisionRules.RunWhenActiveAndEnabled(() => ValidCollisionRules.RemoveAt(1));
-            }
-            if (Facade.SnapValidity.Interface != null)
-            {
-                ValidCollisionRules.RunWhenActiveAndEnabled(() => ValidCollisionRules.Add(Facade.SnapValidity));
-            }
+            ValidCollisionRules.RunWhenActiveAndEnabled(() => ValidCollisionRules.SetAt(Facade.SnapValidity, 0));
         }
 
         /// <summary>

@@ -8,7 +8,9 @@ Sets up the Interactions SnapZone Prefab based on the provided user settings.
 * [Namespace]
 * [Syntax]
 * [Fields]
+  * [cachedSnappedInteractable]
   * [EndOfFrameInstruction]
+  * [InitialOffset]
   * [SnapDefaultInteractableRoutine]
 * [Properties]
   * [ActivationArea]
@@ -43,12 +45,14 @@ Sets up the Interactions SnapZone Prefab based on the provided user settings.
   * [EmitExited(GameObject)]
   * [EmitSnapped(GameObject)]
   * [EmitUnsnapped(GameObject)]
+  * [Hide()]
   * [OnDisable()]
   * [OnEnable()]
   * [PrepareKinematicStateChange(GameObject)]
   * [PrepareKinematicStateChange(InteractableFacade)]
   * [PrepareKinematicStateChange(Rigidbody)]
   * [ProcessOtherSnappablesOnSnap()]
+  * [Show()]
   * [Snap(GameObject)]
   * [SnapInitialAtEndOfFrame()]
   * [Unsnap()]
@@ -72,6 +76,16 @@ public class SnapZoneConfigurator : MonoBehaviour
 
 ### Fields
 
+#### cachedSnappedInteractable
+
+A container for caching the snapped interactable when hiding the snap zone.
+
+##### Declaration
+
+```
+protected InteractableFacade cachedSnappedInteractable
+```
+
 #### EndOfFrameInstruction
 
 An instruction for yielding at the end of the current frame.
@@ -80,6 +94,16 @@ An instruction for yielding at the end of the current frame.
 
 ```
 protected YieldInstruction EndOfFrameInstruction
+```
+
+#### InitialOffset
+
+An offset to apply upon snap if the snapped GameObject is in the same position as the [DestinationLocation] to ensure the follower works correctly.
+
+##### Declaration
+
+```
+protected float InitialOffset
 ```
 
 #### SnapDefaultInteractableRoutine
@@ -442,6 +466,16 @@ public virtual void EmitUnsnapped(GameObject unsnapped)
 | --- | --- | --- |
 | GameObject | unsnapped | The GameObject is unsnapped from the zone. |
 
+#### Hide()
+
+Attempts to gracefully disable the snap zone.
+
+##### Declaration
+
+```
+public virtual void Hide()
+```
+
 #### OnDisable()
 
 ##### Declaration
@@ -516,6 +550,16 @@ Attempts to process any other valid snappable objects against any other potentia
 public virtual void ProcessOtherSnappablesOnSnap()
 ```
 
+#### Show()
+
+Attempts to gracefully enable the snap zone after being hidden.
+
+##### Declaration
+
+```
+public virtual void Show()
+```
+
 #### Snap(GameObject)
 
 Attempts to snap a given GameObject to the snap zone.
@@ -559,6 +603,7 @@ public virtual void Unsnap()
 ```
 
 [Tilia.Interactions.SnapZone]: README.md
+[DestinationLocation]: SnapZoneConfigurator.md#DestinationLocation
 [SnapZoneActivator]: SnapZoneActivator.md
 [ActivationValidator]: SnapZoneConfigurator.md#ActivationValidator
 [ActivationValidator]: ActivationValidator.md
@@ -568,7 +613,9 @@ public virtual void Unsnap()
 [Namespace]: #Namespace
 [Syntax]: #Syntax
 [Fields]: #Fields
+[cachedSnappedInteractable]: #cachedSnappedInteractable
 [EndOfFrameInstruction]: #EndOfFrameInstruction
+[InitialOffset]: #InitialOffset
 [SnapDefaultInteractableRoutine]: #SnapDefaultInteractableRoutine
 [Properties]: #Properties
 [ActivationArea]: #ActivationArea
@@ -603,12 +650,14 @@ public virtual void Unsnap()
 [EmitExited(GameObject)]: #EmitExitedGameObject
 [EmitSnapped(GameObject)]: #EmitSnappedGameObject
 [EmitUnsnapped(GameObject)]: #EmitUnsnappedGameObject
+[Hide()]: #Hide
 [OnDisable()]: #OnDisable
 [OnEnable()]: #OnEnable
 [PrepareKinematicStateChange(GameObject)]: #PrepareKinematicStateChangeGameObject
 [PrepareKinematicStateChange(InteractableFacade)]: #PrepareKinematicStateChangeInteractableFacade
 [PrepareKinematicStateChange(Rigidbody)]: #PrepareKinematicStateChangeRigidbody
 [ProcessOtherSnappablesOnSnap()]: #ProcessOtherSnappablesOnSnap
+[Show()]: #Show
 [Snap(GameObject)]: #SnapGameObject
 [SnapInitialAtEndOfFrame()]: #SnapInitialAtEndOfFrame
 [Unsnap()]: #Unsnap

@@ -224,7 +224,7 @@
         /// </summary>
         public virtual GameObject SnappedGameObject => Configuration.SnappedInteractable;
         /// <summary>
-        /// The state of the SnapZone.
+        /// The state of the snap zone.
         /// </summary>
         public virtual SnapZoneState ZoneState
         {
@@ -240,6 +240,27 @@
                 }
 
                 return SnapZoneState.ZoneIsEmpty;
+            }
+        }
+        /// <summary>
+        /// Whether the snap zone is visible or not.
+        /// </summary>
+        public virtual bool IsVisible
+        {
+            get
+            {
+                return gameObject.activeInHierarchy;
+            }
+            set
+            {
+                if (gameObject.activeInHierarchy)
+                {
+                    Configuration.Hide();
+                }
+                else
+                {
+                    Configuration.Show();
+                }
             }
         }
 
