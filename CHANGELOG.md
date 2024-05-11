@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.3.14...v2.4.0) (2024-05-11)
+
+#### Features
+
+* **Facade:** add IsVisible property for setting/getting visibility ([5368d1d](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/5368d1dab7ba9b7b919baf46ef7b3ff6c96390fc))
+  > The IsVisible property on the SnapZone facade can be used to retrieve the visibility status of the snap zone or set the visibility of the snap zone. Any snapped Interactable will also be hidden via setting the InteractableFacade.IsVisible property.
+
 ### [2.3.14](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.3.13...v2.3.14) (2024-05-11)
 
 #### Miscellaneous Chores
