@@ -20,6 +20,7 @@ The public interface into the Interactions SnapZone Prefab.
   * [Configuration]
   * [HighlightAlwaysActive]
   * [InitialSnappedInteractable]
+  * [IsVisible]
   * [SnappableGameObjects]
   * [SnappedGameObject]
   * [SnapValidity]
@@ -170,6 +171,16 @@ An optional InteractableFacade to snap into the snap zone when the snap zone is 
 public InteractableFacade InitialSnappedInteractable { get; set; }
 ```
 
+#### IsVisible
+
+Whether the snap zone is visible or not.
+
+##### Declaration
+
+```
+public virtual bool IsVisible { get; set; }
+```
+
 #### SnappableGameObjects
 
 Returns the collection of GameObjects that are currently colliding with the snap zone and are valid to be snapped.
@@ -212,7 +223,7 @@ public float TransitionDuration { get; set; }
 
 #### ZoneState
 
-The state of the SnapZone.
+The state of the snap zone.
 
 ##### Declaration
 
@@ -386,6 +397,7 @@ public virtual void Unsnap()
 [Configuration]: #Configuration
 [HighlightAlwaysActive]: #HighlightAlwaysActive
 [InitialSnappedInteractable]: #InitialSnappedInteractable
+[IsVisible]: #IsVisible
 [SnappableGameObjects]: #SnappableGameObjects
 [SnappedGameObject]: #SnappedGameObject
 [SnapValidity]: #SnapValidity

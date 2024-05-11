@@ -94,6 +94,81 @@ MonoBehaviour:
   source:
     transform: {fileID: 0}
     useLocalValues: 0
+--- !u!1 &2573057816708814567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4982589141871954748}
+  - component: {fileID: 9183083036624073721}
+  m_Layer: 0
+  m_Name: ListContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4982589141871954748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573057816708814567}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8702508740229401943}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9183083036624073721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573057816708814567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba4f67a3d5e83e42a9ed87d4eb156d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obtained:
+    m_PersistentCalls:
+      m_Calls: []
+  Found:
+    m_PersistentCalls:
+      m_Calls: []
+  NotFound:
+    m_PersistentCalls:
+      m_Calls: []
+  IsEmpty:
+    m_PersistentCalls:
+      m_Calls: []
+  IsPopulated:
+    m_PersistentCalls:
+      m_Calls: []
+  Populated:
+    m_PersistentCalls:
+      m_Calls: []
+  Added:
+    m_PersistentCalls:
+      m_Calls: []
+  Removed:
+    m_PersistentCalls:
+      m_Calls: []
+  Emptied:
+    m_PersistentCalls:
+      m_Calls: []
+  currentIndex: 0
+  elements:
+  - assemblyQualifiedTypeName: Tilia.Interactions.Interactables.Interactables.ComponentTags.InteractableVisibilityStatusTag,
+      Tilia.Interactions.Interactables.Unity.Runtime, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &5185142757575960199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1247,9 @@ MonoBehaviour:
       m_Calls: []
   currentIndex: 0
   elements:
+  - field: {fileID: 0}
   - field: {fileID: 8407923664176682199}
+  - field: {fileID: 5990127051490237480}
 --- !u!1 &8407923664475317337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2843,6 +2920,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8407923664176682196}
+  - {fileID: 8702508740229401943}
   m_Father: {fileID: 8407923664469734246}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3484,12 +3562,15 @@ MonoBehaviour:
   target: {fileID: 8407923665379814195}
   pipelines:
   - pipelineName: (?i)default
+    pipelineShaderName: 
     materials:
     - {fileID: 2100000, guid: cac370e18424aeb40b14e48b6086e96c, type: 2}
   - pipelineName: (?i)urp
+    pipelineShaderName: 
     materials:
     - {fileID: 2100000, guid: cac370e18424aeb40b14e48b6086e96c, type: 2}
   - pipelineName: (?i)hdrp
+    pipelineShaderName: 
     materials:
     - {fileID: 2100000, guid: cac370e18424aeb40b14e48b6086e96c, type: 2}
 --- !u!1 &8407923665391782912
@@ -4436,6 +4517,7 @@ MonoBehaviour:
     useLocalValues: 0
   target: {fileID: 0}
   offset: {fileID: 0}
+  allowMutate: 1
   applyPositionOffsetOnAxis:
     xState: 1
     yState: 1
@@ -4477,6 +4559,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  TransformUpdateSkipped:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8407923665882540331
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,8 +4920,8 @@ MonoBehaviour:
     field: {fileID: 0}
   transitionDuration: 0
   initialSnappedInteractable: {fileID: 0}
-  highlightAlwaysActive: 0
   applySnapZoneScale: 1
+  highlightAlwaysActive: 0
   autoSnapThrownObjects: 0
   configuration: {fileID: 8407923666110382458}
   Entered:
@@ -5680,6 +5765,52 @@ Transform:
   m_Father: {fileID: 8407923664207455155}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8451102268017616803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8702508740229401943}
+  - component: {fileID: 5990127051490237480}
+  m_Layer: 0
+  m_Name: MustBeVisibleInteractable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8702508740229401943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451102268017616803}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4982589141871954748}
+  m_Father: {fileID: 8407923665102637360}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5990127051490237480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451102268017616803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41bc47b4c9ce81047a6c9720b9d0b626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRejectStates: -1
+  behaviourTypes: {fileID: 9183083036624073721}
 --- !u!1 &8983124105666235685
 GameObject:
   m_ObjectHideFlags: 0
