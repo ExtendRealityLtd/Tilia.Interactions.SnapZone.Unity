@@ -253,13 +253,13 @@
             }
             set
             {
-                if (gameObject.activeInHierarchy)
+                if (value)
                 {
-                    Configuration.Hide();
+                    Configuration.Show();
                 }
                 else
                 {
-                    Configuration.Show();
+                    Configuration.Hide();
                 }
             }
         }
