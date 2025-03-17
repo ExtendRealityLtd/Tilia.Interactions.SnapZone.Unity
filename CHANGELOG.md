@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.4.9](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.4.8...v2.4.9) (2025-03-17)
+
+#### Bug Fixes
+
+* **Facade:** toggle isVisible correctly ([158f7d1](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/commit/158f7d102855acd52b5b67c7fe661cb268b68b55))
+  > The IsVisible property was not actually toggling correctly as if `=false` was passed twice, then the second time it would actually show the snap zone rather than simply continue to hide it.
+
 ### [2.4.8](https://github.com/ExtendRealityLtd/Tilia.Interactions.SnapZone.Unity/compare/v2.4.7...v2.4.8) (2024-09-28)
 
 #### Miscellaneous Chores
